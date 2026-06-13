@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// デバッグ：Notion接続テスト
+const NOTION_TOKEN = import.meta.env.NOTION_TOKEN;
+const NOTION_BLOG_DB = import.meta.env.NOTION_BLOG_DB;
+
+let debugInfo = {
+  hasToken: !!NOTION_TOKEN,
+  hasDB: !!NOTION_BLOG_DB,
+  tokenPrefix: NOTION_TOKEN ? NOTION_TOKEN.substring(0, 10) + '...' : 'なし',
+  dbId: NOTION_BLOG_DB || 'なし',
+  posts: [],
+  error: null,
+  rawResponse: null,
+};
+
+if (NOTION_TOKEN && NOTION_BLOG_DB) {
+  try {
+    const res = await fetch(`https://api.notion.com/v1/databases/${NOTION_BLOG_DB}/query`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${NOTION_TOKEN}`,
+        'Notion-Version': '2022-06-28',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ page_size: 10 })
+    });
+
+    const data = await res.json();
+    debugInfo.rawResponse = JSON.stringify(data, null, 2);
+    
+    if (data.results) {
+      debugInfo.posts = data.results.map(p => ({
+        id: p.id,
+        title: p.properties?.['タイトル']?.title?.[0]?.plain_text ?? '(タイトルなし)',
+        status: p.properties?.['ステータス']?.status?.name ?? '(ステータスなし)',
+        category: p.properties?.['カテゴリ']?.select?.name ?? '(カテゴリなし)',
+      }));
+    }
+  } catch(e) {
+    debugInfo.error = e.message;
+  }
+}
+---
+<Layout title="デバッグ | ブルーム">
+<section style="padding: 4rem 1.5rem;">
+  <div style="max-width: 900px; margin: 0 auto; font-family: monospace;">
+    <h1 style="font-size: 24px; margin-bottom: 2rem;">🔍 Notion接続デバッグ</h1>
+    
+    <div style="background: #1e1628; color: #e8d8f8; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+      <h2 style="color: #f0889a; margin-bottom: 1rem;">環境変数</h2>
+      <p>NOTION_TOKEN: {debugInfo.hasToken ? '✅ あり (' + debugInfo.tokenPrefix + ')' : '❌ なし'}</p>
+      <p>NOTION_BLOG_DB: {debugInfo.hasDB ? '✅ あり (' + debugInfo.dbId + ')' : '❌ なし'}</p>
+    </div>
+
+    {debugInfo.error && (
+      <div style="background: #3a1020; color: #f0889a; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+        <h2 style="margin-bottom: 0.5rem;">❌ エラー</h2>
+        <p>{debugInfo.error}</p>
+      </div>
+    )}
+
+    <div style="background: #1e1628; color: #e8d8f8; padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem;">
+      <h2 style="color: #86c8f8; margin-bottom: 1rem;">取得した記事一覧（フィルターなし）</h2>
+      {debugInfo.posts.length > 0 ? (
+        <ul>
+          {debugInfo.posts.map(p => (
+            <li style="margin-bottom: 0.5rem;">
+              📄 {p.title} | ステータス: <strong style="color: #f0889a">{p.status}</strong> | カテゴリ: {p.category}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p style="color: #f0889a;">記事が取得できませんでした</p>
+      )}
+    </div>
+  </div>
+</section>
+</Layout>

@@ -1,6 +1,7 @@
 ---
 // 共通レイアウト
 // すべてのページで使うヘッダー・フッターはここで管理します
+import '../styles/global.css';
 const { title = '訪問看護ステーション・居宅介護支援事業所ブルーム', description = '豊田市・安城市・知立市を中心に、訪問看護・リハビリ・居宅介護支援の3つのサービスで在宅生活を全力でサポートします。' } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -10,7 +11,7 @@ const { title = '訪問看護ステーション・居宅介護支援事業所ブ
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <link rel="stylesheet" href="/styles/global.css">
+
 </head>
 <body>
 

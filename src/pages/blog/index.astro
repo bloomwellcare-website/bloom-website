@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getBlogPosts } from '../../lib/notion.js';
+
+// Notionから公開中の記事だけ取得
+// ※ Notionのステータスを「公開中」にすると自動で表示
+// ※ ステータスを「下書き」や「非公開」にすると自動で非表示
+const posts = await getBlogPosts();
+---
+<Layout title="ブログ・お役立ち情報 | ブルーム">
+
+<section class="blog-bg" style="padding-top: 4rem;">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Blog</div>
+      <h2 class="sttl">ブログ・お役立ち情報</h2>
+      <p class="sdesc">スタッフが日々の現場から発信。どの部門が書いたかもひと目でわかります。</p>
+    </div>
+
+    <!-- フィルターボタン -->
+    <div class="blog-filter">
+      <button class="fbtn active" data-cat="all"           onclick="filterBlog(this)">すべて</button>
+      <button class="fbtn"         data-cat="訪問看護"     onclick="filterBlog(this)">🩺 訪問看護</button>
+      <button class="fbtn"         data-cat="リハビリ"     onclick="filterBlog(this)">🦽 リハビリ</button>
+      <button class="fbtn"         data-cat="居宅介護支援" onclick="filterBlog(this)">📋 居宅介護支援</button>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      {posts.length > 0 ? posts.map(post => (
+        <a class="blog-card" href={post.url} data-cat={post.category}>
+          <div class="blog-thumb" style={`background: ${post.category === 'リハビリ' ? 'var(--sky-pale)' : post.category === '居宅介護支援' ? '#d8f0e8' : 'var(--pink-pale)'}`}>
+            {post.category === 'リハビリ' ? '🦽' : post.category === '居宅介護支援' ? '📋' : '🩺'}
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class={`bcat ${post.category === 'リハビリ' ? 'bc-r' : post.category === '居宅介護支援' ? 'bc-c' : 'bc-n'}`}>{post.category}</span>
+              <span class="bdate">{post.date}</span>
+            </div>
+            <p class="bttl">{post.title}</p>
+            {post.summary && <p style="font-size:13px; color:var(--txt-muted); margin-top:6px; line-height:1.7">{post.summary}</p>}
+            {post.author && <p class="bauthor">✍️ {post.author}</p>}
+          </div>
+        </a>
+      )) : (
+        <>
+          <!-- 記事がない場合の表示 -->
+          <a class="blog-card" href="#" data-cat="訪問看護">
+            <div class="blog-thumb" style="background: var(--pink-pale)">🩺</div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="bcat bc-n">訪問看護</span><span class="bdate">2025.01.15</span></div>
+              <p class="bttl">在宅での医療的ケア—人工呼吸器管理のポイント</p>
+              <p class="bauthor">✍️ 看護師 田中</p>
+            </div>
+          </a>
+          <div class="blog-coming" data-cat="居宅介護支援" id="blog-coming">
+            <div class="bc-icon">📋</div>
+            <div class="bc-ttl">居宅介護支援事業所ブルームより</div>
+            <p class="bc-txt">ケアマネジャーからの情報を準備中です。近日公開予定です。</p>
+          </div>
+        </>
+      )}
+    </div>
+  </div>
+</section>
+
+</Layout>

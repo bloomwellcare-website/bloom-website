@@ -1,0 +1,273 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getBlogPosts } from '../lib/notion.js';
+
+const posts = await getBlogPosts();
+const recentPosts = posts.slice(0, 3);
+---
+<Layout>
+
+<!-- ■ お知らせバー -->
+<div class="notice-bar">
+  <div class="notice-inner">
+    <span class="notice-badge">お知らせ</span>
+    <div class="notice-list">
+      <!-- ✏️ お知らせはここを編集してください -->
+      <a class="notice-link" href="#"><span class="notice-date">2025.02.19</span>医療DX推進への取り組みについて</a>
+      <a class="notice-link" href="#"><span class="notice-date">2024.08.18</span>ホームページをリニューアルしました</a>
+    </div>
+  </div>
+</div>
+
+<!-- ■ ヒーロー -->
+<!-- 📷 PHOTO: 背景写真を変えたいときは /public/images/hero.jpg を置いて
+     global.css の .hero の background-image のコメントを外してください -->
+<section class="hero" id="top">
+  <div class="hero-overlay"></div>
+  <div class="hero-d1"></div>
+  <div class="hero-d2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-dot"></span>
+      WITH YOUR HAPPINESS — あなたの幸せとともに
+    </div>
+    <h1>住み慣れた場所で、<br><em>その人らしく</em><br>生きるために。</h1>
+    <p class="hero-sub">
+      豊田市・安城市・知立市を中心に、<br>
+      訪問看護・リハビリ・居宅介護支援の3つのサービスで<br>
+      在宅生活を全力でサポートします。
+    </p>
+    <div class="hero-btns">
+      <a class="btn-main" href="#services">サービスを見る →</a>
+      <a class="btn-sub"  href="#contact">無料相談はこちら</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-pill"><div class="stat-num">2016</div><div class="stat-lbl">設立年</div></div>
+    <div class="stat-pill"><div class="stat-num">10年+</div><div class="stat-lbl">の実績</div></div>
+    <div class="stat-pill"><div class="stat-num">3市</div><div class="stat-lbl">対応エリア</div></div>
+  </div>
+</section>
+
+<!-- ■ サービス -->
+<section id="services">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">Our Services</div>
+      <h2 class="sttl">3つのサービス</h2>
+      <p class="sdesc">看護・リハビリ・ケアマネジメントの専門チームが連携し、在宅での安心した暮らしをお支えします。</p>
+    </div>
+    <div class="svc-grid">
+      <!-- 📷 PHOTO: 各カードの写真は /public/images/ に置いて global.css の .th-n/.th-r/.th-c を編集 -->
+      <a class="svc-card" href="/nursing">
+        <div class="svc-thumb th-n"><span class="svc-em">🩺</span></div>
+        <div class="svc-body">
+          <span class="svc-badge sb-p">訪問看護 / 看護</span>
+          <div class="svc-name">看護サービス</div>
+          <p class="svc-desc">医師の指示のもと、健康観察・医療処置・服薬管理・在宅看取りなど、専門の看護師がご自宅へ伺います。</p>
+          <div class="svc-tags">
+            <span class="tag tp">医療処置</span><span class="tag tp">褥瘡ケア</span><span class="tag tp">人工呼吸器</span><span class="tag tp">精神科対応</span><span class="tag tp">在宅看取り</span>
+          </div>
+          <div class="svc-more sm-p">看護サービスの詳細 →</div>
+        </div>
+      </a>
+      <a class="svc-card" href="/rehab">
+        <div class="svc-thumb th-r"><span class="svc-em">🦽</span></div>
+        <div class="svc-body">
+          <span class="svc-badge sb-s">訪問看護 / リハビリ</span>
+          <div class="svc-name">リハビリサービス</div>
+          <p class="svc-desc">理学療法士・作業療法士がご自宅を訪問。身体機能の回復・維持から日常動作の改善まで個別支援します。</p>
+          <div class="svc-tags">
+            <span class="tag ts">理学療法士(PT)</span><span class="tag ts">作業療法士(OT)</span><span class="tag ts">ADL改善</span><span class="tag ts">転倒予防</span>
+          </div>
+          <div class="svc-more sm-s">リハビリの詳細 →</div>
+        </div>
+      </a>
+      <a class="svc-card" href="/care">
+        <div class="svc-thumb th-c"><span class="svc-em">📋</span></div>
+        <div class="svc-body">
+          <span class="svc-badge sb-g">居宅介護支援</span>
+          <div class="svc-name">居宅介護支援</div>
+          <p class="svc-desc">ケアマネジャーが要介護認定の申請からケアプラン作成・調整まで、生活設計を一緒に考えます。</p>
+          <div class="svc-tags">
+            <span class="tag tg">ケアプラン作成</span><span class="tag tg">認定申請代行</span><span class="tag tg">施設相談</span>
+          </div>
+          <div class="svc-more sm-g">居宅介護支援の詳細 →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ■ 特徴 -->
+<section class="feat-bg">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">Why Bloom</div>
+      <h2 class="sttl">ブルームが選ばれる理由</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-num">01</div><div class="feat-ttl">迅速な緊急対応</div><p class="feat-txt">エリアを絞り、緊急時も素早く訪問できる体制。休日・夜間も安心して任せられます。</p></div>
+      <div class="feat-card"><div class="feat-num">02</div><div class="feat-ttl">退院後の安心サポート</div><p class="feat-txt">退院時カンファレンスへ積極参加。病院と同様のケアが自宅でも受けられるよう徹底引き継ぎ。</p></div>
+      <div class="feat-card"><div class="feat-num">03</div><div class="feat-ttl">幅広い疾患・状態に対応</div><p class="feat-txt">がん・難病・精神疾患・医療的ケアまで。多様なニーズに対応できる専門チームが揃っています。</p></div>
+      <div class="feat-card"><div class="feat-num">04</div><div class="feat-ttl">医療DX推進</div><p class="feat-txt">ICT活用による情報共有で、スタッフ間・医療機関との連携を強化。質の高いケアを実現します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ■ 代表あいさつ -->
+<section id="about">
+  <div class="si">
+    <div class="greet-wrap">
+      <!-- 📷 PHOTO: /public/images/office.jpg を置いて global.css の .greet-photo を編集 -->
+      <div class="greet-photo">🌸<div class="greet-badge">合同会社 SHIARA</div></div>
+      <div>
+        <div class="greet-en">Message from CEO</div>
+        <!-- ✏️ あいさつ文はここを編集してください -->
+        <h2 class="greet-ttl">「幸せの力を支援する会社」として、<br>地域とともに歩んでいきます。</h2>
+        <p class="greet-txt">私たちの会社名、SHIARA（シアラ）の語源は「幸せになる力」です。2016年5月に「あなたの笑顔と幸せの花を咲かせたい」という願いを込めて、訪問看護ステーションブルームを設立しました。</p>
+        <p class="greet-txt">これまで約10年の間、愛知県豊田市を中心に、介護・医療・障害の分野で地域の方々の在宅生活を支援させていただいてまいりました。これからも、住み慣れた場所で安心してその人らしい生活を送れるよう、全力でサポートさせていただきます。</p>
+        <a class="btn-flat" href="#">会社情報をもっと見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ■ ブログ（最新3件） -->
+<section id="blog" class="blog-bg">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Blog</div>
+      <h2 class="sttl">ブログ・お役立ち情報</h2>
+      <p class="sdesc">スタッフが日々の現場から発信。どの部門が書いたかもひと目でわかります。</p>
+    </div>
+    <div class="blog-filter">
+      <button class="fbtn active" data-cat="all"         onclick="filterBlog(this)">すべて</button>
+      <button class="fbtn"         data-cat="訪問看護"   onclick="filterBlog(this)">🩺 訪問看護</button>
+      <button class="fbtn"         data-cat="リハビリ"   onclick="filterBlog(this)">🦽 リハビリ</button>
+      <button class="fbtn"         data-cat="居宅介護支援" onclick="filterBlog(this)">📋 居宅介護支援</button>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      {recentPosts.length > 0 ? recentPosts.map(post => (
+        <a class="blog-card" href={post.url} data-cat={post.category}>
+          <div class="blog-thumb" style={`background: var(${post.category === 'リハビリ' ? '--sky-pale' : post.category === '居宅介護支援' ? '--tg' : '--pink-pale'})`}>
+            {post.category === 'リハビリ' ? '🦽' : post.category === '居宅介護支援' ? '📋' : '🩺'}
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span class={`bcat ${post.category === 'リハビリ' ? 'bc-r' : post.category === '居宅介護支援' ? 'bc-c' : 'bc-n'}`}>{post.category}</span>
+              <span class="bdate">{post.date}</span>
+            </div>
+            <p class="bttl">{post.title}</p>
+            {post.author && <p class="bauthor">✍️ {post.author}</p>}
+          </div>
+        </a>
+      )) : (
+        <>
+          <!-- Notionに記事がない場合のサンプル表示 -->
+          <a class="blog-card" href="#" data-cat="訪問看護">
+            <div class="blog-thumb" style="background: var(--pink-pale)">🩺</div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="bcat bc-n">訪問看護</span><span class="bdate">2025.01.15</span></div>
+              <p class="bttl">在宅での医療的ケア—人工呼吸器管理のポイント</p>
+              <p class="bauthor">✍️ 訪問看護ステーションブルーム　看護師 田中</p>
+            </div>
+          </a>
+          <a class="blog-card" href="#" data-cat="リハビリ">
+            <div class="blog-thumb" style="background: var(--sky-pale)">🦽</div>
+            <div class="blog-body">
+              <div class="blog-meta"><span class="bcat bc-r">リハビリ</span><span class="bdate">2024.12.20</span></div>
+              <p class="bttl">転倒予防のための自宅でできるバランストレーニング</p>
+              <p class="bauthor">✍️ 訪問看護ステーションブルーム　理学療法士 鈴木</p>
+            </div>
+          </a>
+          <div class="blog-coming" data-cat="居宅介護支援" id="blog-coming">
+            <div class="bc-icon">📋</div>
+            <div class="bc-ttl">居宅介護支援事業所ブルームより</div>
+            <p class="bc-txt">ケアマネジャーからの情報を準備中です。<br>近日公開予定です。お楽しみに！</p>
+          </div>
+        </>
+      )}
+    </div>
+    <div style="text-align:center"><a class="btn-more" href="/blog">ブログをもっと見る →</a></div>
+  </div>
+</section>
+
+<!-- ■ FAQ -->
+<section id="faq">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">FAQ</div>
+      <h2 class="sttl">よくあるご質問</h2>
+      <p class="sdesc">訪問看護・居宅介護支援についてよく寄せられるご質問をまとめました。</p>
+    </div>
+    <div class="faq-wrap">
+      <!-- ✏️ FAQの追加・編集はここで行ってください -->
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">訪問看護ではどんなことをしてもらえますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>薬・点滴・人工呼吸器・胃瘻・尿道留置カテーテル・腹膜透析などの管理、褥瘡の処置、排便コントロール、在宅看取りの支援、入浴介助、理学療法士・作業療法士によるリハビリなど、多岐にわたります。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">迷っているのですが、話だけでも聞いてもらえますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>もちろんです。事前にご説明だけでも伺うことが可能です。相談には費用もかかりませんので、お気軽にお電話やお問い合わせフォームからご連絡ください。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">サービス提供エリアはどこですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>豊田市・安城市・知立市を中心に、迅速に訪問可能なエリアに限定しています。詳細はお問い合わせください。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">精神科の訪問看護も対応していますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>対応しています。精神疾患をお持ちの方への訪問看護も行っております。不安なことがあればお気軽にご相談ください。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">居宅介護支援事業所とは何ですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>ケアマネジャーが在籍し、要介護認定の申請代行・ケアプランの作成・介護サービス事業者との調整・施設入所の相談などを行う事業所です。</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ■ お問い合わせCTA -->
+<div class="cta-section" id="contact">
+  <div class="cta-d1"></div><div class="cta-d2"></div>
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>相談だけでも構いません。訪問看護や居宅介護支援について、<br>どんな小さなことでもお気軽にお問い合わせください。</p>
+  <div class="cta-phones">
+    <div class="cta-ph">
+      <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
+      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
+      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+    </div>
+    <div class="cta-ph">
+      <div class="cta-ph-lbl">居宅介護支援事業所ブルーム</div>
+      <a class="cta-ph-num" href="tel:0565416750">0565-41-6750</a>
+      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+    </div>
+  </div>
+  <div class="cta-btns">
+    <!-- ✏️ お問い合わせフォームのURLを設定してください -->
+    <a class="cta-w" href="/contact">📩 お問い合わせフォーム</a>
+    <!-- ✏️ LINE公式アカウントのURLを設定してください -->
+    <a class="cta-o" href="#">💬 LINE で相談する</a>
+  </div>
+</div>
+
+<!-- ■ 事業所情報 -->
+<section class="info-bg">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Company</div>
+      <h2 class="sttl">事業所情報</h2>
+    </div>
+    <table class="info-tbl">
+      <tr><th>社名</th><td>合同会社 SHIARA<br><small style="color:var(--txt-muted)">訪問看護ステーションブルーム・居宅介護支援事業所ブルーム</small></td></tr>
+      <tr><th>所在地（訪問看護）</th><td>〒473-0902 愛知県豊田市大林町10丁目20-5 K・スクエア102号</td></tr>
+      <tr><th>所在地（居宅介護支援）</th><td>〒470-1206 愛知県豊田市永覚新町3丁目17番地 MIガーデン102号</td></tr>
+      <tr><th>電話番号</th><td>訪問看護：<a href="tel:0565416767">0565-41-6767</a><br>居宅介護支援：<a href="tel:0565416750">0565-41-6750</a></td></tr>
+      <tr><th>営業時間</th><td>平日 8:30〜17:30（土日・祝定休）</td></tr>
+      <tr><th>事業所番号</th><td>訪問看護：2363090206<br>居宅介護支援：2373003884</td></tr>
+    </table>
+  </div>
+</section>
+
+</Layout>

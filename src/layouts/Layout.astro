@@ -1,0 +1,144 @@
+---
+// 共通レイアウト
+// すべてのページで使うヘッダー・フッターはここで管理します
+const { title = '訪問看護ステーション・居宅介護支援事業所ブルーム', description = '豊田市・安城市・知立市を中心に、訪問看護・リハビリ・居宅介護支援の3つのサービスで在宅生活を全力でサポートします。' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+
+<!-- ■ ヘッダー -->
+<header>
+  <div class="hdr">
+    <a class="logo" href="/">
+      <span class="logo-main">🌸 訪問看護ステーション・居宅介護支援事業所ブルーム</span>
+      <span class="logo-sub">豊田市 · 安城市 · 知立市 ｜ 在宅ケアのパートナー</span>
+    </a>
+
+    <nav id="main-nav">
+      <div class="nav-item">
+        <span class="nav-link has-dd">訪問看護</span>
+        <div class="dropdown">
+          <a class="dd-link" href="/nursing"><span class="dd-icon di-p">🩺</span>看護サービス</a>
+          <a class="dd-link" href="/rehab"><span class="dd-icon di-s">🦽</span>リハビリサービス</a>
+          <a class="dd-link" href="/#faq"><span class="dd-icon di-p">❓</span>よくある質問</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <span class="nav-link has-dd">居宅介護支援</span>
+        <div class="dropdown">
+          <a class="dd-link" href="/care"><span class="dd-icon di-s">📋</span>サービス内容</a>
+          <a class="dd-link" href="/care#area"><span class="dd-icon di-s">🗺️</span>サービスエリア</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="/#about">会社情報</a></div>
+      <div class="nav-item"><a class="nav-link" href="/recruit">採用情報</a></div>
+      <div class="nav-item"><a class="nav-link" href="/blog">ブログ</a></div>
+      <a class="nav-cta" href="/#contact">お問い合わせ</a>
+    </nav>
+
+    <div class="hdr-ph">
+      <span>訪問看護ステーション</span>
+      <a href="tel:0565416767">0565-41-6767</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ページ内容 -->
+<slot />
+
+<!-- ■ SNSバー -->
+<div class="sns-bar">
+  <div class="sns-inner">
+    <span class="sns-lbl">公式SNS・LINE</span>
+    <!-- 📷 各SNSのURLをここに入れてください -->
+    <a class="sns-btn sns-line" href="#">💬 LINE 公式</a>
+    <a class="sns-btn sns-ig"   href="#">📷 Instagram</a>
+    <a class="sns-btn sns-fb"   href="#">📘 Facebook</a>
+  </div>
+</div>
+
+<!-- ■ フッター -->
+<footer>
+  <div class="ftr">
+    <div class="ftr-top">
+      <div>
+        <div class="ftr-logo">🌸 訪問看護ステーション・<br>居宅介護支援事業所ブルーム</div>
+        <p class="ftr-tag">With Your Happiness — あなたの幸せとともに<br><br>豊田市・安城市・知立市を中心に在宅ケアを支援<br><br>合同会社 SHIARA</p>
+      </div>
+      <div>
+        <div class="ftr-ttl">サービス</div>
+        <ul class="ftr-links">
+          <li><a href="/nursing">訪問看護（看護）</a></li>
+          <li><a href="/rehab">訪問看護（リハビリ）</a></li>
+          <li><a href="/care">居宅介護支援</a></li>
+          <li><a href="/#faq">よくある質問</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ftr-ttl">その他</div>
+        <ul class="ftr-links">
+          <li><a href="/#about">代表あいさつ</a></li>
+          <li><a href="/recruit">採用情報</a></li>
+          <li><a href="/blog">ブログ</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-copy">
+      Copyright &copy; 2016–{new Date().getFullYear()} 訪問看護ステーション・居宅介護支援事業所ブルーム（合同会社SHIARA）. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ハンバーガーメニュー
+const ham = document.getElementById('hamburger');
+const nav = document.getElementById('main-nav');
+ham?.addEventListener('click', () => nav?.classList.toggle('open'));
+
+// スムーズスクロール
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const t = document.querySelector(id);
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); nav?.classList.remove('open'); }
+  });
+});
+
+// FAQアコーディオン
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+window.toggleFaq = toggleFaq;
+
+// ブログフィルター
+function filterBlog(btn) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat = btn.dataset.cat;
+  document.querySelectorAll('#blog-grid [data-cat]').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+  const coming = document.getElementById('blog-coming');
+  if (coming) coming.style.display = (cat === 'all' || cat === '居宅介護支援') ? '' : 'none';
+}
+window.filterBlog = filterBlog;
+</script>
+</body>
+</html>

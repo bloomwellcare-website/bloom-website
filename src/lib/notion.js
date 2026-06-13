@@ -4,7 +4,7 @@
 const NOTION_TOKEN = import.meta.env.NOTION_TOKEN;
 const NOTION_BLOG_DB = import.meta.env.NOTION_BLOG_DB;
 
-// ブログ記事一覧を取得（公開中のみ）
+// ブログ記事一覧を取得（公開済みのみ）
 export async function getBlogPosts() {
   if (!NOTION_TOKEN || !NOTION_BLOG_DB) {
     console.warn('Notion環境変数が設定されていません');
@@ -21,11 +21,11 @@ export async function getBlogPosts() {
       },
       body: JSON.stringify({
         filter: {
-          // ステータスが「公開中」のものだけ表示
-          // Notionの「公開・非公開切り替え」はここで制御しています
+          // ステータスが「公開済み」のものだけ表示
+          // Notionのステータスを「公開済み」にすると表示、それ以外は非表示
           property: 'ステータス',
           status: {
-            equals: '公開中'
+            equals: '公開済み'
           }
         },
         sorts: [

@@ -1,0 +1,124 @@
+---
+// 訪問看護（看護）ページ
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="看護サービス | 訪問看護ステーションブルーム">
+
+<!-- ヒーロー -->
+<section style="background: linear-gradient(135deg, var(--pink-soft) 0%, var(--sky-soft) 100%); padding: 5rem 1.5rem 4rem;">
+  <div class="si" style="text-align: center;">
+    <div class="sen sen-p">Visiting Nursing</div>
+    <h1 class="sttl">看護サービス</h1>
+    <p class="sdesc">医師の指示のもと、専門の看護師がご自宅へ伺います。<br>医療処置から日常生活のサポートまで、安心の在宅療養を支えます。</p>
+  </div>
+</section>
+
+<!-- サービス内容 -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">Service</div>
+      <h2 class="sttl">サービス内容</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem;">
+        <div style="font-size: 32px; margin-bottom: 0.75rem;">💊</div>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">健康状態の管理</h3>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">血圧・体温・脈拍などのバイタルサイン測定、服薬管理・指導、体調変化の早期発見と対応</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem;">
+        <div style="font-size: 32px; margin-bottom: 0.75rem;">🩹</div>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">医療処置</h3>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">点滴・注射、傷の処置・褥瘡ケア、人工呼吸器管理、胃瘻・経管栄養、カテーテル管理、腹膜透析</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem;">
+        <div style="font-size: 32px; margin-bottom: 0.75rem;">🛁</div>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">清潔ケア・入浴介助</h3>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">入浴介助、清拭、口腔ケア、排便コントロール。清潔を保ち、感染予防と快適な生活をサポートします。</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem;">
+        <div style="font-size: 32px; margin-bottom: 0.75rem;">🧠</div>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">精神科訪問看護</h3>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">精神疾患をお持ちの方への訪問看護。服薬支援、生活リズムの整備、ご家族へのサポートも行います。</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem;">
+        <div style="font-size: 32px; margin-bottom: 0.75rem;">👨‍👩‍👧</div>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">ご家族への支援</h3>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">介護方法の指導、介護負担の軽減、ご家族の相談対応。在宅介護を続けられるよう一緒に考えます。</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border); padding: 1.5rem;">
+        <div style="font-size: 32px; margin-bottom: 0.75rem;">🕊️</div>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">在宅看取りの支援</h3>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">住み慣れた場所で最期を迎えたいというご希望をサポートします。24時間体制で医師・ご家族と連携します。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 対応できる疾患・状態 -->
+<section style="background: var(--pink-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">対応疾患</div>
+      <h2 class="sttl">こんな方が利用しています</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      {['がん（悪性腫瘍）', '脳血管疾患', '心疾患', '呼吸器疾患', '糖尿病', 'パーキンソン病', '筋萎縮性側索硬化症（ALS）', '多発性硬化症', '認知症', '精神疾患', '医療的ケア児', '難病', '骨折・術後リハビリ', '褥瘡（床ずれ）'].map(d => (
+        <span class="tag tp">{d}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 利用の流れ -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">Flow</div>
+      <h2 class="sttl">ご利用の流れ</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0; max-width: 640px; margin: 0 auto;">
+      {[
+        { num: '01', title: 'お問い合わせ', text: 'お電話またはお問い合わせフォームからご連絡ください。相談は無料です。' },
+        { num: '02', title: '訪問・ご説明', text: 'スタッフがご自宅へ伺い、現在の状況をお聞きしてサービス内容をご説明します。' },
+        { num: '03', title: '医師の指示書', text: '主治医に訪問看護指示書を発行していただきます。お手伝いすることも可能です。' },
+        { num: '04', title: 'ご契約・開始', text: '契約後、訪問看護を開始します。訪問頻度・時間はご要望に合わせて調整します。' },
+      ].map((step, i) => (
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px dashed var(--border);">
+          <div style="flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--pink-pale); display: flex; align-items: center; justify-content: center; font-family: 'Kaisei Decol', serif; font-size: 18px; font-weight: 700; color: var(--pink);">{step.num}</div>
+          <div>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">{step.title}</h3>
+            <p style="font-size: 14px; color: var(--txt-muted); line-height: 1.85;">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-d1"></div><div class="cta-d2"></div>
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>相談だけでも構いません。どんな小さなことでもお気軽にどうぞ。</p>
+  <div class="cta-phones">
+    <div class="cta-ph">
+      <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
+      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
+      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+    </div>
+  </div>
+  <div class="cta-btns">
+    <a class="cta-w" href="/#contact">📩 お問い合わせフォーム</a>
+    <a class="cta-o" href="#">💬 LINE で相談する</a>
+  </div>
+</div>
+
+</Layout>

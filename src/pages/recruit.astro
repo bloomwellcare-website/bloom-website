@@ -1,25 +1,14 @@
 ---
-// 採用情報ページ
-// 公開・非公開の切り替えはNotionで管理します
-// Notionの「ステータス」を「公開中」にすると表示、「非公開」にすると非表示
 import Layout from '../layouts/Layout.astro';
 
-// 採用情報の公開設定
-// ✏️ 公開したい求人はここの published を true、非公開は false にしてください
-// 将来的にはNotionで管理できるよう拡張可能です
 const jobs = [
   {
-    published: false, // ← trueにすると公開、falseにすると非表示
+    published: false,
     title: '訪問看護師（正社員・パート）',
     type: '看護師',
     employment: '正社員・パート',
     description: '訪問看護ステーションブルームで一緒に働きませんか。経験者優遇。ブランクのある方も歓迎します。',
-    conditions: [
-      '給与：応相談',
-      '勤務地：豊田市内',
-      '勤務時間：8:30〜17:30（応相談）',
-      '資格：看護師免許',
-    ],
+    conditions: ['給与：応相談', '勤務地：豊田市内', '勤務時間：8:30〜17:30（応相談）', '資格：看護師免許'],
   },
   {
     published: false,
@@ -27,10 +16,7 @@ const jobs = [
     type: 'リハビリ',
     employment: '正社員・パート',
     description: '訪問リハビリに興味のある方、ぜひご連絡ください。',
-    conditions: [
-      '給与：応相談',
-      '資格：PT・OT免許',
-    ],
+    conditions: ['給与：応相談', '資格：PT・OT免許'],
   },
   {
     published: false,
@@ -38,40 +24,119 @@ const jobs = [
     type: '居宅介護支援',
     employment: '正社員',
     description: '居宅介護支援事業所ブルームのケアマネジャーを募集しています。',
-    conditions: [
-      '給与：応相談',
-      '資格：介護支援専門員',
-    ],
+    conditions: ['給与：応相談', '資格：介護支援専門員'],
   },
 ];
 
-// 公開中の求人だけ抽出
 const publishedJobs = jobs.filter(j => j.published);
+
+// 📷 写真ファイルの場所（public/images/フォルダ内）
+// ファイル名を変えたいときはここだけ修正してください
+const photos = [
+  {
+    // 📷 事務所内の写真
+    src: '/images/写真 2025-09-23 15 21 38.jpg',
+    alt: '事務所内の様子',
+    caption: '事務所'
+  },
+  {
+    // 📷 相談室の写真
+    src: '/images/写真 2025-09-23 15 50 44.jpg',
+    alt: '相談室の様子',
+    caption: '相談室'
+  },
+  {
+    // 📷 外観・訪問車の写真
+    src: '/images/写真 2025-09-23 16 57 36.jpg',
+    alt: '事業所外観と訪問車',
+    caption: '外観・訪問車'
+  },
+];
 ---
 <Layout title="採用情報 | ブルーム">
 
-<section style="padding-top: 4rem;">
+<!-- ヒーロー -->
+<section style="background: linear-gradient(135deg, var(--pink-soft) 0%, var(--sky-soft) 100%); padding: 5rem 1.5rem 4rem;">
+  <div class="si" style="text-align: center;">
+    <div class="sen sen-p">Recruit</div>
+    <h1 class="sttl">採用情報</h1>
+    <p class="sdesc">「住み慣れた場所で暮らし続けたい」という方を支えるチームの一員になりませんか。<br>私たちと一緒に、地域の在宅ケアを支えましょう。</p>
+  </div>
+</section>
+
+<!-- 職場の様子 写真3枚横並び -->
+<section>
   <div class="si">
     <div class="shd">
-      <div class="sen sen-p">Recruit</div>
-      <h2 class="sttl">採用情報</h2>
-      <p class="sdesc">「住み慣れた場所で暮らし続けたい」という方を支えるチームの一員になりませんか。</p>
+      <div class="sen sen-p">Office</div>
+      <h2 class="sttl">職場の様子</h2>
+      <p class="sdesc">明るく働きやすい環境で、スタッフ一同お待ちしています。</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+      {photos.map(photo => (
+        <div style="border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(232,143,160,0.12);">
+          <div style="aspect-ratio: 4/3; overflow: hidden;">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              style="width: 100%; height: 100%; object-fit: cover; display: block;"
+            />
+          </div>
+          <div style="background: var(--pink-soft); padding: 0.6rem 1rem; text-align: center; font-size: 13px; color: var(--txt-mid); font-weight: 500;">
+            {photo.caption}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ブルームで働く魅力 -->
+<section style="background: var(--pink-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">Features</div>
+      <h2 class="sttl">ブルームで働く魅力</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+      {[
+        { icon: '🌸', title: 'アットホームな職場', text: 'スタッフ同士の仲が良く、相談しやすい環境です。新しく入る方もすぐに馴染めます。' },
+        { icon: '📅', title: '柔軟な働き方', text: '勤務時間・日数はご相談に応じます。育児中の方やブランクのある方も活躍しています。' },
+        { icon: '🚗', title: '訪問車あり', text: '水色の社用車で訪問します。マイカー通勤も可能です。' },
+        { icon: '📚', title: '研修・勉強会', text: '定期的な研修・勉強会があります。スキルアップできる環境を整えています。' },
+      ].map(f => (
+        <div style="background: white; border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); text-align: center;">
+          <div style="font-size: 36px; margin-bottom: 0.75rem;">{f.icon}</div>
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.5rem;">{f.title}</h3>
+          <p style="font-size: 13px; color: var(--txt-muted); line-height: 1.85;">{f.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 募集職種 -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">Jobs</div>
+      <h2 class="sttl">募集職種</h2>
     </div>
 
     {publishedJobs.length > 0 ? (
-      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
         {publishedJobs.map(job => (
-          <div style="background:white; border:1px solid var(--border); border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(232,143,160,0.05);">
-            <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
-              <span style="background:var(--pink-pale); color:var(--pink); font-size:11px; font-weight:700; padding:3px 12px; border-radius:99px;">{job.type}</span>
-              <span style="background:var(--sky-pale); color:var(--sky); font-size:11px; font-weight:700; padding:3px 12px; border-radius:99px;">{job.employment}</span>
+          <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+              <span style="background: var(--pink-pale); color: var(--pink); font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 99px;">{job.type}</span>
+              <span style="background: var(--sky-pale); color: var(--sky); font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 99px;">{job.employment}</span>
             </div>
-            <h3 style="font-family:'Kaisei Decol',serif; font-size:20px; font-weight:700; color:var(--txt-dark); margin-bottom:0.75rem;">{job.title}</h3>
-            <p style="font-size:14px; color:var(--txt-muted); line-height:1.9; margin-bottom:1rem;">{job.description}</p>
-            <ul style="list-style:none; display:flex; flex-direction:column; gap:0.4rem;">
+            <h3 style="font-family: 'Kaisei Decol', serif; font-size: 20px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.75rem;">{job.title}</h3>
+            <p style="font-size: 14px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 1rem;">{job.description}</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem;">
               {job.conditions.map(c => (
-                <li style="font-size:13.5px; color:var(--txt-mid); display:flex; gap:8px;">
-                  <span style="color:var(--pink);">●</span>{c}
+                <li style="font-size: 13.5px; color: var(--txt-mid); display: flex; gap: 8px;">
+                  <span style="color: var(--pink);">●</span>{c}
                 </li>
               ))}
             </ul>
@@ -79,20 +144,27 @@ const publishedJobs = jobs.filter(j => j.published);
         ))}
       </div>
     ) : (
-      <!-- 公開中の求人がない場合 -->
-      <div style="background:white; border:2px dashed var(--border); border-radius:16px; padding:3rem; text-align:center;">
-        <div style="font-size:48px; margin-bottom:1rem;">🌸</div>
-        <h3 style="font-family:'Kaisei Decol',serif; font-size:20px; font-weight:700; color:var(--txt-dark); margin-bottom:0.75rem;">現在、募集中の求人はありません</h3>
-        <p style="font-size:14px; color:var(--txt-muted); line-height:1.9;">
-          求人情報は随時更新しています。<br>
-          お気軽にお問い合わせください。
-        </p>
-        <div style="margin-top:1.5rem;">
+      <div style="background: white; border: 2px dashed var(--border); border-radius: 16px; padding: 3rem; text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 1rem;">🌸</div>
+        <h3 style="font-family: 'Kaisei Decol', serif; font-size: 20px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.75rem;">現在、募集中の求人はありません</h3>
+        <p style="font-size: 14px; color: var(--txt-muted); line-height: 1.9;">求人情報は随時更新しています。<br>お気軽にお問い合わせください。</p>
+        <div style="margin-top: 1.5rem;">
           <a class="btn-main" href="/#contact">お問い合わせはこちら</a>
         </div>
       </div>
     )}
   </div>
 </section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-d1"></div><div class="cta-d2"></div>
+  <h2>一緒に働きませんか？</h2>
+  <p>まずはお気軽にお問い合わせください。見学だけでも歓迎します！</p>
+  <div class="cta-btns">
+    <a class="cta-w" href="/#contact">📩 採用についてのお問い合わせ</a>
+    <a class="cta-o" href="#">💬 LINE で相談する</a>
+  </div>
+</div>
 
 </Layout>

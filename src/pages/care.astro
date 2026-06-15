@@ -1,0 +1,125 @@
+---
+// 居宅介護支援ページ
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="居宅介護支援 | 居宅介護支援事業所ブルーム">
+
+<!-- ヒーロー -->
+<section style="background: linear-gradient(135deg, #f0faf5 0%, var(--sky-soft) 100%); padding: 5rem 1.5rem 4rem;">
+  <div class="si" style="text-align: center;">
+    <div class="sen" style="color: #2a8a60;">Care Management</div>
+    <h1 class="sttl">居宅介護支援</h1>
+    <p class="sdesc">ケアマネジャーが介護に関するあらゆる相談に対応します。<br>要介護認定の申請からケアプラン作成・サービス調整まで、生活設計を一緒に考えます。</p>
+  </div>
+</section>
+
+<!-- 居宅介護支援とは -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen" style="color: #2a8a60;">About</div>
+      <h2 class="sttl">居宅介護支援とは？</h2>
+    </div>
+    <div style="background: white; border-radius: 20px; border: 1px solid #c8e8d8; padding: 2.5rem; max-width: 760px; margin: 0 auto;">
+      <p style="font-size: 15px; color: var(--txt-mid); line-height: 2.1; margin-bottom: 1rem;">
+        介護が必要になったとき、どんなサービスをどこに頼めばいいのか、費用はどのくらいかかるのか…わからないことがたくさんあります。
+      </p>
+      <p style="font-size: 15px; color: var(--txt-mid); line-height: 2.1; margin-bottom: 1rem;">
+        居宅介護支援事業所のケアマネジャー（介護支援専門員）は、そんな不安を解消するための専門職です。介護保険の申請代行から、ご本人・ご家族の希望に沿ったケアプランの作成、介護サービス事業者との調整まで、介護に関することをトータルでサポートします。
+      </p>
+      <p style="font-size: 15px; color: var(--txt-mid); line-height: 2.1;">
+        <strong style="color: #2a8a60;">ケアマネジャーへの相談・ケアプランの作成は、利用者様の自己負担はありません。</strong>（介護保険から全額給付）
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- サービス内容 -->
+<section style="background: #f0faf5;">
+  <div class="si">
+    <div class="shd">
+      <div class="sen" style="color: #2a8a60;">Service</div>
+      <h2 class="sttl">サービス内容</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+      {[
+        { icon: '📋', title: 'ケアプランの作成', text: 'ご本人・ご家族の希望や心身の状況をふまえ、最適な介護サービスの計画（ケアプラン）を作成します。' },
+        { icon: '📝', title: '要介護認定の申請代行', text: '介護保険の要介護認定申請をご本人に代わって行います。初めての方も安心してお任せください。' },
+        { icon: '🤝', title: 'サービス事業者との調整', text: 'ヘルパー・デイサービス・訪問看護など、各サービス事業者との連絡・調整を一括して行います。' },
+        { icon: '🏥', title: '入退院時のサポート', text: '入院時の手続き支援、退院後のサービス再調整など、病院と連携しながらスムーズな在宅復帰をサポートします。' },
+        { icon: '🏡', title: '施設入所の相談', text: '在宅での生活が難しくなった場合、特別養護老人ホームや老人保健施設などの施設選びをサポートします。' },
+        { icon: '📞', title: '定期的なモニタリング', text: '月1回以上の定期訪問でケアプランの見直しを行い、状況に合わせてサービスを調整します。' },
+      ].map(s => (
+        <div style="background: white; border-radius: 14px; border: 1px solid #c8e8d8; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 0.6rem;">{s.icon}</div>
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">{s.title}</h3>
+          <p style="font-size: 13px; color: var(--txt-muted); line-height: 1.85;">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- こんな時に -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen" style="color: #2a8a60;">こんなときに</div>
+      <h2 class="sttl">こんなときはご相談ください</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      {[
+        '介護保険の申請をしたい',
+        'どんなサービスが使えるか知りたい',
+        '退院後の生活が心配',
+        '一人暮らしの親が心配',
+        '介護と仕事の両立が大変',
+        '施設に入るべきか悩んでいる',
+        '今のサービスを見直したい',
+        'ヘルパーやデイサービスを探している',
+        '認知症の家族のサポートをしたい',
+      ].map(d => (
+        <span class="tag tg">{d}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- サービスエリア -->
+<section style="background: #f0faf5;" id="area">
+  <div class="si">
+    <div class="shd">
+      <div class="sen" style="color: #2a8a60;">Area</div>
+      <h2 class="sttl">サービスエリア</h2>
+      <p class="sdesc">以下のエリアを中心に対応しています。詳細はお問い合わせください。</p>
+    </div>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      {['豊田市', '安城市', '知立市'].map(area => (
+        <div style="background: white; border-radius: 12px; border: 2px solid #c8e8d8; padding: 1.25rem 2.5rem; text-align: center;">
+          <div style="font-size: 24px; margin-bottom: 0.4rem;">📍</div>
+          <div style="font-family: 'Kaisei Decol', serif; font-size: 18px; font-weight: 700; color: #2a8a60;">{area}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-d1"></div><div class="cta-d2"></div>
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>相談は無料です。どんな小さなことでもお気軽にどうぞ。</p>
+  <div class="cta-phones">
+    <div class="cta-ph">
+      <div class="cta-ph-lbl">居宅介護支援事業所ブルーム</div>
+      <a class="cta-ph-num" href="tel:0565416750">0565-41-6750</a>
+      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+    </div>
+  </div>
+  <div class="cta-btns">
+    <a class="cta-w" href="/#contact">📩 お問い合わせフォーム</a>
+    <a class="cta-o" href="#">💬 LINE で相談する</a>
+  </div>
+</div>
+
+</Layout>

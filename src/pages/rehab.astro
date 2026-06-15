@@ -1,0 +1,128 @@
+---
+// 訪問看護（リハビリ）ページ
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="リハビリサービス | 訪問看護ステーションブルーム">
+
+<!-- ヒーロー -->
+<section style="background: linear-gradient(135deg, var(--sky-soft) 0%, var(--pink-soft) 100%); padding: 5rem 1.5rem 4rem;">
+  <div class="si" style="text-align: center;">
+    <div class="sen sen-s">Rehabilitation</div>
+    <h1 class="sttl">リハビリサービス</h1>
+    <p class="sdesc">理学療法士・作業療法士がご自宅を訪問します。<br>身体機能の回復・維持から日常生活動作の改善まで、個別プログラムで支援します。</p>
+  </div>
+</section>
+
+<!-- 専門職紹介 -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Specialist</div>
+      <h2 class="sttl">専門スタッフ</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem; text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 1rem;">🦽</div>
+        <h3 style="font-family: 'Kaisei Decol', serif; font-size: 18px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">理学療法士（PT）</h3>
+        <p style="font-size: 12px; color: var(--sky); font-weight: 600; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Physical Therapist</p>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">関節の動き・筋力・バランスなど身体機能の回復・維持を専門とします。歩行訓練や転倒予防も対応します。</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem; text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 1rem;">✋</div>
+        <h3 style="font-family: 'Kaisei Decol', serif; font-size: 18px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">作業療法士（OT）</h3>
+        <p style="font-size: 12px; color: var(--sky); font-weight: 600; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Occupational Therapist</p>
+        <p style="font-size: 13.5px; color: var(--txt-muted); line-height: 1.85;">食事・着替え・入浴などの日常生活動作（ADL）の改善を専門とします。住環境の整備もサポートします。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- サービス内容 -->
+<section style="background: var(--sky-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Service</div>
+      <h2 class="sttl">リハビリの内容</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+      {[
+        { icon: '🚶', title: '歩行・移動訓練', text: '安全に歩けるよう筋力・バランスを鍛えます。杖や歩行器の使い方もご指導します。' },
+        { icon: '🛡️', title: '転倒予防', text: '転倒リスクを評価し、自宅環境の改善提案と予防訓練を行います。' },
+        { icon: '🍽️', title: '日常生活動作訓練', text: '食事・着替え・入浴・トイレなど、自立した生活ができるよう支援します。' },
+        { icon: '💪', title: '筋力・関節訓練', text: '廃用による筋力低下を防ぎ、関節の柔軟性を維持・改善します。' },
+        { icon: '🏠', title: '住環境整備の提案', text: '手すりの位置・段差解消など、安全に暮らせる住環境のアドバイスをします。' },
+        { icon: '🧘', title: '呼吸リハビリ', text: '慢性呼吸器疾患の方への呼吸訓練・体力維持プログラムを提供します。' },
+      ].map(s => (
+        <div style="background: white; border-radius: 14px; border: 1px solid var(--border-sky); padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 0.6rem;">{s.icon}</div>
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">{s.title}</h3>
+          <p style="font-size: 13px; color: var(--txt-muted); line-height: 1.85;">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- こんな方に -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">対象</div>
+      <h2 class="sttl">こんな方におすすめです</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      {['脳卒中後の麻痺', '骨折・術後のリハビリ', 'パーキンソン病', '関節リウマチ', '変形性関節症', '廃用症候群', '呼吸器疾患', '神経難病', '転倒が心配な方', '退院後の機能回復', '介護予防'].map(d => (
+        <span class="tag ts">{d}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- 利用の流れ -->
+<section style="background: var(--sky-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Flow</div>
+      <h2 class="sttl">ご利用の流れ</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0; max-width: 640px; margin: 0 auto;">
+      {[
+        { num: '01', title: 'お問い合わせ', text: 'お電話またはお問い合わせフォームからご連絡ください。相談は無料です。' },
+        { num: '02', title: '訪問・評価', text: 'リハビリ専門職がご自宅を訪問し、現在の状態を評価してプログラムを立案します。' },
+        { num: '03', title: '医師の指示書', text: '主治医に訪問看護指示書を発行していただきます。' },
+        { num: '04', title: 'リハビリ開始', text: '個別プログラムに沿ってリハビリを開始します。定期的に評価・見直しを行います。' },
+      ].map(step => (
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px dashed var(--border-sky);">
+          <div style="flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--sky-pale); display: flex; align-items: center; justify-content: center; font-family: 'Kaisei Decol', serif; font-size: 18px; font-weight: 700; color: var(--sky);">{step.num}</div>
+          <div>
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">{step.title}</h3>
+            <p style="font-size: 14px; color: var(--txt-muted); line-height: 1.85;">{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-d1"></div><div class="cta-d2"></div>
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>相談だけでも構いません。どんな小さなことでもお気軽にどうぞ。</p>
+  <div class="cta-phones">
+    <div class="cta-ph">
+      <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
+      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
+      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+    </div>
+  </div>
+  <div class="cta-btns">
+    <a class="cta-w" href="/#contact">📩 お問い合わせフォーム</a>
+    <a class="cta-o" href="#">💬 LINE で相談する</a>
+  </div>
+</div>
+
+</Layout>

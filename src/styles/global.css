@@ -153,7 +153,7 @@ nav { display: flex; align-items: center; }
   position: relative; min-height: 580px;
   display: flex; align-items: center; overflow: hidden;
   background-color: #f5eaf0;
-  /* background-image: url('/images/hero.jpg'); ← 写真を追加するときはここのコメントを外す */
+  background-image: url('/images/ホームページ背景.jpg'); 
   background-size: cover; background-position: center;
 }
 .hero-overlay {

@@ -152,7 +152,6 @@ nav { display: flex; align-items: center; }
 .hero {
   position: relative; min-height: 620px;
   display: flex; align-items: flex-end; overflow: hidden;
-  background-color: #f5eaf0;
 }
 .hero::before {
   content: '';

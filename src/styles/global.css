@@ -40,7 +40,7 @@ body {
   background: var(--cream);
   color: var(--txt-dark);
   line-height: 1.75;
-  font-size: 17px;
+  font-size: 19px;
 }
 
 /* ━━━ HEADER ━━━ */
@@ -83,7 +83,7 @@ nav { display: flex; align-items: center; }
 /* ドロップダウン */
 .dropdown {
   display: none;
-  position: absolute; top: calc(100% + 4px); left: 50%;
+  position: absolute; top: 100%; left: 50%; padding-top: 10px;
   transform: translateX(-50%);
   background: var(--white);
   border: 1px solid var(--border);
@@ -153,12 +153,17 @@ nav { display: flex; align-items: center; }
   position: relative; min-height: 580px;
   display: flex; align-items: center; overflow: hidden;
   background-color: #f5eaf0;
-  background-image: url('/images/ホームページ背景.jpg'); 
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('/images/ホームページ背景.jpg');
   background-size: cover; background-position: center;
+  filter: saturate(1.35) contrast(1.08);
 }
 .hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(120deg, rgba(255,240,246,0.9) 0%, rgba(224,242,255,0.8) 100%);
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(120deg, rgba(255,240,246,0.45) 0%, rgba(224,242,255,0.35) 100%);
 }
 .hero-d1 { position: absolute; right:-80px; top:-80px; width:520px; height:520px; border-radius:50%; background: radial-gradient(circle, rgba(232,143,160,0.15), transparent 70%); }
 .hero-d2 { position: absolute; right:160px; bottom:-120px; width:340px; height:340px; border-radius:50%; background: radial-gradient(circle, rgba(90,175,212,0.1), transparent 70%); }
@@ -183,7 +188,7 @@ nav { display: flex; align-items: center; }
   background: linear-gradient(135deg, var(--pink), var(--sky));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.hero-sub { font-size: 17px; color: var(--txt-mid); line-height: 2; max-width: 480px; margin-bottom: 2.5rem; }
+.hero-sub { font-size: 19px; color: var(--txt-mid); line-height: 2; max-width: 480px; margin-bottom: 2.5rem; }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero-stats { position: absolute; right: 1.5rem; bottom: 3rem; display: flex; gap: 1rem; z-index: 2; }
 .stat-pill { background: white; border-radius: 12px; padding: 0.75rem 1.25rem; text-align: center; box-shadow: 0 4px 20px rgba(90,175,212,0.14); border: 1px solid var(--border); }
@@ -232,7 +237,7 @@ section { padding: 5.5rem 1.5rem; }
 .sen-p { color: var(--pink); }
 .sen-s { color: var(--sky); }
 .sttl { font-family: 'Shippori Mincho', serif; font-size: clamp(22px,3.5vw,34px); font-weight: 700; color: var(--txt-dark); line-height: 1.45; margin-bottom: 0.8rem; }
-.sdesc { font-size: 16px; color: var(--txt-muted); line-height: 1.95; max-width: 500px; margin: 0 auto; }
+.sdesc { font-size: 18px; color: var(--txt-muted); line-height: 1.95; max-width: 500px; margin: 0 auto; }
 
 /* ━━━ サービスカード ━━━ */
 .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; }
@@ -261,7 +266,7 @@ section { padding: 5.5rem 1.5rem; }
 .sb-s { background: var(--sky-pale); color: var(--sky); }
 .sb-g { background: #d8f0e8; color: #2a8a60; }
 .svc-name { font-family: 'Shippori Mincho', serif; font-size: 19px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.6rem; }
-.svc-desc { font-size: 15.5px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 1rem; }
+.svc-desc { font-size: 17.5px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 1rem; }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.25rem; }
 .tag { font-size: 11px; padding: 3px 10px; border-radius: 99px; border: 1px solid; font-weight: 500; }
 .tp { background: var(--pink-soft); color: var(--pink); border-color: var(--pink-pale); }
@@ -279,7 +284,7 @@ section { padding: 5.5rem 1.5rem; }
 .feat-card { background: white; border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; border: 1px solid var(--border); }
 .feat-num { font-family: 'Shippori Mincho', serif; font-size: 44px; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--pink-pale), var(--sky-pale)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .feat-ttl { font-size: 14px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.65rem; }
-.feat-txt { font-size: 14.5px; color: var(--txt-muted); line-height: 1.85; }
+.feat-txt { font-size: 16.5px; color: var(--txt-muted); line-height: 1.85; }
 
 /* ━━━ あいさつ ━━━ */
 .greet-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
@@ -295,7 +300,7 @@ section { padding: 5.5rem 1.5rem; }
 .greet-badge { position: absolute; bottom: 1.25rem; left: 1.25rem; background: white; border-radius: 10px; padding: 0.6rem 1rem; font-size: 12px; font-weight: 500; color: var(--txt-mid); box-shadow: 0 4px 14px rgba(232,143,160,0.15); border: 1px solid var(--border); }
 .greet-en { font-size: 11px; letter-spacing: 0.2em; color: var(--pink); font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; }
 .greet-ttl { font-family: 'Shippori Mincho', serif; font-size: clamp(19px,2.5vw,27px); font-weight: 700; color: var(--txt-dark); line-height: 1.55; margin-bottom: 1.5rem; }
-.greet-txt { font-size: 16px; color: var(--txt-muted); line-height: 2.1; margin-bottom: 1rem; }
+.greet-txt { font-size: 18px; color: var(--txt-muted); line-height: 2.1; margin-bottom: 1rem; }
 
 /* ━━━ ブログ ━━━ */
 .blog-bg { background: var(--sky-soft); }
@@ -316,24 +321,24 @@ section { padding: 5.5rem 1.5rem; }
 .bc-r { background: var(--sky-pale); color: var(--sky); }
 .bc-c { background: #d8f0e8; color: #2a8a60; }
 .bdate { font-size: 11px; color: var(--txt-muted); }
-.bttl { font-size: 16px; font-weight: 500; color: var(--txt-dark); line-height: 1.6; }
+.bttl { font-size: 18px; font-weight: 500; color: var(--txt-dark); line-height: 1.6; }
 .bauthor { font-size: 11px; color: var(--txt-muted); margin-top: 6px; }
 .blog-coming { background: white; border-radius: 16px; border: 2px dashed var(--sky-pale); padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
 .bc-icon { font-size: 36px; }
-.bc-ttl { font-size: 16px; font-weight: 600; color: var(--sky); }
-.bc-txt { font-size: 14.5px; color: var(--txt-muted); line-height: 1.8; }
+.bc-ttl { font-size: 18px; font-weight: 600; color: var(--sky); }
+.bc-txt { font-size: 16.5px; color: var(--txt-muted); line-height: 1.8; }
 
 /* ━━━ FAQ ━━━ */
 .faq-wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.65rem; }
 .faq-item { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
-.faq-qbtn { width: 100%; text-align: left; display: flex; align-items: flex-start; gap: 12px; padding: 1.1rem 1.25rem; background: none; border: none; cursor: pointer; font-size: 16px; font-weight: 500; color: var(--txt-dark); transition: background 0.15s; font-family: inherit; }
+.faq-qbtn { width: 100%; text-align: left; display: flex; align-items: flex-start; gap: 12px; padding: 1.1rem 1.25rem; background: none; border: none; cursor: pointer; font-size: 18px; font-weight: 500; color: var(--txt-dark); transition: background 0.15s; font-family: inherit; }
 .faq-qbtn:hover { background: var(--pink-soft); }
 .faq-qm { flex-shrink: 0; width: 26px; height: 26px; background: linear-gradient(135deg, var(--pink), var(--pink-mid)); color: white; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
 .faq-qt { flex: 1; }
 .faq-plus { flex-shrink: 0; font-size: 20px; line-height: 1; color: var(--pink-mid); transition: transform 0.25s; margin-left: auto; }
 .faq-item.open .faq-plus { transform: rotate(45deg); }
 .faq-a { display: none; padding: 0 1.25rem 1.1rem 3.9rem; border-top: 1px dashed var(--border); }
-.faq-ai { padding-top: 1rem; display: flex; gap: 10px; font-size: 15.5px; color: var(--txt-muted); line-height: 1.95; }
+.faq-ai { padding-top: 1rem; display: flex; gap: 10px; font-size: 17.5px; color: var(--txt-muted); line-height: 1.95; }
 .faq-am { flex-shrink: 0; width: 24px; height: 24px; background: var(--sky-pale); color: var(--sky); border-radius: 7px; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
 .faq-item.open .faq-a { display: block; }
 
@@ -342,7 +347,7 @@ section { padding: 5.5rem 1.5rem; }
 .cta-d1 { position: absolute; top:-100px; right:-100px; width:400px; height:400px; border-radius:50%; background:rgba(255,255,255,0.06); }
 .cta-d2 { position: absolute; bottom:-80px; left:-80px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,0.05); }
 .cta-section h2 { font-family: 'Shippori Mincho', serif; font-size: clamp(22px,3.5vw,34px); font-weight: 700; color: white; margin-bottom: 0.75rem; position: relative; z-index: 2; }
-.cta-section > p { font-size: 16.5px; color: rgba(255,255,255,0.85); line-height: 2; margin-bottom: 2.75rem; position: relative; z-index: 2; }
+.cta-section > p { font-size: 18.5px; color: rgba(255,255,255,0.85); line-height: 2; margin-bottom: 2.75rem; position: relative; z-index: 2; }
 .cta-phones { display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 2.25rem; position: relative; z-index: 2; }
 .cta-ph { background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.35); border-radius: 14px; padding: 1.25rem 2rem; text-align: left; backdrop-filter: blur(6px); }
 .cta-ph-lbl { font-size: 11px; color: rgba(255,255,255,0.72); margin-bottom: 4px; }
@@ -366,7 +371,7 @@ section { padding: 5.5rem 1.5rem; }
 
 /* ━━━ 事業所情報 ━━━ */
 .info-bg { background: var(--sky-soft); }
-.info-tbl { width: 100%; border-collapse: collapse; font-size: 16px; }
+.info-tbl { width: 100%; border-collapse: collapse; font-size: 18px; }
 .info-tbl th { text-align: left; padding: 0.9rem 1.25rem; color: var(--sky); font-weight: 600; white-space: nowrap; width: 28%; border-bottom: 1px solid var(--sky-pale); vertical-align: top; }
 .info-tbl td { padding: 0.9rem 1.25rem; color: var(--txt-mid); border-bottom: 1px solid var(--sky-pale); line-height: 1.75; }
 .info-tbl a { color: var(--sky); text-decoration: none; }

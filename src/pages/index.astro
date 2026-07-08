@@ -3,7 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import { getBlogPosts } from '../lib/notion.js';
 
 const posts = await getBlogPosts();
-const recentPosts = posts.slice(0, 3);
+const now = Date.now();
+const recentPosts = posts.slice(0, 3).map(p => ({
+  ...p,
+  isNew: p.date ? (now - new Date(p.date).getTime()) / 86400000 <= 14 : false,
+}));
 ---
 <Layout>
 
@@ -29,7 +33,7 @@ const recentPosts = posts.slice(0, 3);
   <div class="hero-content">
     <div class="hero-badge">
       <span class="hero-dot"></span>
-      WITH YOUR HAPPINESS — あなたの幸せとともに
+      WITH YOUR HAPPINESS — <span class="hand-note">あなたの幸せとともに</span>
     </div>
     <h1>住み慣れた場所で、<br><em>その人らしく</em><br>生きるために。</h1>
     <p class="hero-sub">
@@ -123,6 +127,7 @@ const recentPosts = posts.slice(0, 3);
       <div class="greet-photo">🌸<div class="greet-badge">合同会社 SHIARA</div></div>
       <div>
         <div class="greet-en">Message from CEO</div>
+        <p class="hand-note" style="font-size: 20px; color: var(--txt-dark); margin: 0 0 0.5rem;">幸せの花を、咲かせたい。</p>
         <!-- ✏️ あいさつ文はここを編集してください -->
         <h2 class="greet-ttl">「幸せの力を支援する会社」として、<br>地域とともに歩んでいきます。</h2>
         <p class="greet-txt">私たちの会社名、SHIARA（シアラ）の語源は「幸せになる力」です。2016年5月に「あなたの笑顔と幸せの花を咲かせたい」という願いを込めて、訪問看護ステーションブルームを設立しました。</p>
@@ -157,6 +162,7 @@ const recentPosts = posts.slice(0, 3);
             <div class="blog-meta">
               <span class={`bcat ${post.category === 'リハビリ' ? 'bc-r' : post.category === '居宅介護支援' ? 'bc-c' : 'bc-n'}`}>{post.category}</span>
               <span class="bdate">{post.date}</span>
+              {post.isNew && <span class="hand-note" style="font-size: 13px; color: var(--pink); margin-left: 4px;">更新しました</span>}
             </div>
             <p class="bttl">{post.title}</p>
             {post.author && <p class="bauthor">✍️ {post.author}</p>}
@@ -231,6 +237,7 @@ const recentPosts = posts.slice(0, 3);
 <div class="cta-section" id="contact">
   <div class="cta-d1"></div><div class="cta-d2"></div>
   <h2>まずはお気軽にご相談ください</h2>
+  <p class="hand-note" style="font-size: 17px; color: white; margin: 0 0 0.5rem; position: relative; z-index: 2;">どんな小さなことも、お気軽にどうぞ。</p>
   <p>相談だけでも構いません。訪問看護や居宅介護支援について、<br>どんな小さなことでもお気軽にお問い合わせください。</p>
   <div class="cta-phones">
     <div class="cta-ph">

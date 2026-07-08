@@ -31,9 +31,10 @@ const recentPosts = posts.slice(0, 3).map(p => ({
   <div class="hero-d1"></div>
   <div class="hero-d2"></div>
   <div class="hero-content">
+    <div class="hero-eyebrow">With your happiness</div>
     <div class="hero-badge">
       <span class="hero-dot"></span>
-      WITH YOUR HAPPINESS — <span class="hand-note">あなたの幸せとともに</span>
+      <span class="hand-note">あなたの幸せとともに</span>
     </div>
     <h1>住み慣れた場所で、<br><em>その人らしく</em><br>生きるために。</h1>
     <p class="hero-sub">
@@ -49,7 +50,7 @@ const recentPosts = posts.slice(0, 3).map(p => ({
 </section>
 
 <!-- ■ サービス -->
-<section id="services">
+<section id="services" class="services-fade">
   <div class="si">
     <div class="shd">
       <div class="sen sen-p">Our Services</div>
@@ -59,7 +60,7 @@ const recentPosts = posts.slice(0, 3).map(p => ({
     <div class="svc-grid">
       <!-- 📷 PHOTO: 各カードの写真は /public/images/ に置いて global.css の .th-n/.th-r/.th-c を編集 -->
       <a class="svc-card" href="/nursing">
-        <div class="svc-thumb th-n"><span class="svc-em">🩺</span></div>
+        <div class="svc-thumb th-n"><span class="svc-em">❤️‍🩹</span></div>
         <div class="svc-body">
           <span class="svc-badge sb-p">訪問看護 / 看護</span>
           <div class="svc-name">看護サービス</div>
@@ -71,7 +72,7 @@ const recentPosts = posts.slice(0, 3).map(p => ({
         </div>
       </a>
       <a class="svc-card" href="/rehab">
-        <div class="svc-thumb th-r"><span class="svc-em">🦽</span></div>
+        <div class="svc-thumb th-r"><span class="svc-em">🚶</span></div>
         <div class="svc-body">
           <span class="svc-badge sb-s">訪問看護 / リハビリ</span>
           <div class="svc-name">リハビリサービス</div>
@@ -115,7 +116,7 @@ const recentPosts = posts.slice(0, 3).map(p => ({
 </section>
 
 <!-- ■ 代表あいさつ -->
-<section id="about">
+<section id="about" style="background: var(--cream); position: relative;">
   <div class="si">
     <div class="greet-wrap">
       <!-- 📷 PHOTO: /public/images/office.jpg を置いて global.css の .greet-photo を編集 -->
@@ -195,7 +196,7 @@ const recentPosts = posts.slice(0, 3).map(p => ({
 </section>
 
 <!-- ■ FAQ -->
-<section id="faq">
+<section id="faq" style="background: var(--cream); position: relative;">
   <div class="si">
     <div class="shd">
       <div class="sen sen-p">FAQ</div>

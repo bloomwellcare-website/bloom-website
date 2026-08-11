@@ -235,34 +235,41 @@ const recentPosts = posts.slice(0, 3).map(p => ({
   <h2>まずはお気軽にご相談ください</h2>
   <p class="hand-note" style="font-size: 17px; color: white; margin: 0 0 0.5rem; position: relative; z-index: 2;">どんな小さなことも、お気軽にどうぞ。</p>
   <p>相談だけでも構いません。訪問看護や居宅介護支援について、<br>どんな小さなことでもお気軽にお電話ください。</p>
-  <div class="cta-phones">
-    <div class="cta-ph">
-      <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
-      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
-      <div class="cta-ph-hr">平日 8:30〜17:30</div>
-    </div>
-    <div class="cta-ph">
-      <div class="cta-ph-lbl">居宅介護支援事業所ブルーム</div>
-      <a class="cta-ph-num" href="tel:0565416750">0565-41-6750</a>
-      <div class="cta-ph-hr">平日 8:30〜17:30</div>
-    </div>
+  <div style="margin-top: 1.5rem; position: relative; z-index: 2;">
+    <a class="btn-main" href="#info">電話番号を見る ↓</a>
   </div>
 </div>
 
 <!-- ■ 事業所情報 -->
-<section class="info-bg">
+<section class="info-bg" id="info">
   <div class="si">
     <div class="shd">
       <div class="sen sen-s">Company</div>
       <h2 class="sttl">事業所情報</h2>
+      <p class="sdesc">訪問看護や居宅介護支援について、どんな小さなことでもお気軽にお電話ください。</p>
     </div>
+
+    <div class="office-grid">
+      <div class="office-card">
+        <span class="office-badge ob-p">訪問看護ステーション</span>
+        <div class="office-name">訪問看護ステーションブルーム</div>
+        <a class="office-num" href="tel:0565416767">0565-41-6767</a>
+        <div class="office-hr">平日 8:30〜17:30（土日・祝定休）</div>
+        <div class="office-row"><span class="office-row-lbl">所在地</span><span>〒473-0902 愛知県豊田市大林町10丁目20-5 <span style="white-space:nowrap;">K・スクエア102号</span></span></div>
+        <div class="office-row"><span class="office-row-lbl">事業所番号</span><span>2363090206</span></div>
+      </div>
+      <div class="office-card">
+        <span class="office-badge ob-s">居宅介護支援事業所</span>
+        <div class="office-name">居宅介護支援事業所ブルーム</div>
+        <a class="office-num" href="tel:0565416750">0565-41-6750</a>
+        <div class="office-hr">平日 8:30〜17:30（土日・祝定休）</div>
+        <div class="office-row"><span class="office-row-lbl">所在地</span><span>〒470-1206 愛知県豊田市永覚新町3丁目17番地 <span style="white-space:nowrap;">MIガーデン102号</span></span></div>
+        <div class="office-row"><span class="office-row-lbl">事業所番号</span><span>2373003884</span></div>
+      </div>
+    </div>
+
     <table class="info-tbl">
-      <tr><th>社名</th><td>合同会社 SHIARA<br><small style="color:var(--txt-muted)">訪問看護ステーションブルーム・居宅介護支援事業所ブルーム</small></td></tr>
-      <tr><th>所在地（訪問看護）</th><td>〒473-0902 愛知県豊田市大林町10丁目20-5 K・スクエア102号</td></tr>
-      <tr><th>所在地（居宅介護支援）</th><td>〒470-1206 愛知県豊田市永覚新町3丁目17番地 MIガーデン102号</td></tr>
-      <tr><th>電話番号</th><td>訪問看護：<a href="tel:0565416767">0565-41-6767</a><br>居宅介護支援：<a href="tel:0565416750">0565-41-6750</a></td></tr>
-      <tr><th>営業時間</th><td>平日 8:30〜17:30（土日・祝定休）</td></tr>
-      <tr><th>事業所番号</th><td>訪問看護：2363090206<br>居宅介護支援：2373003884</td></tr>
+      <tr><th>社名</th><td>合同会社 SHIARA</td></tr>
     </table>
   </div>
 </section>

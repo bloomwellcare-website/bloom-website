@@ -2,14 +2,30 @@
 // 訪問看護（リハビリ）ページ
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="リハビリサービス | 訪問看護ステーションブルーム">
+<Layout title="訪問でのリハビリ | 訪問看護ステーションブルーム">
 
 <!-- ヒーロー -->
 <section style="background: linear-gradient(135deg, var(--sky-soft) 0%, var(--pink-soft) 100%); padding: 5rem 1.5rem 4rem;">
   <div class="si" style="text-align: center;">
-    <div class="sen sen-s">Rehabilitation</div>
-    <h1 class="sttl">リハビリサービス</h1>
-    <p class="sdesc">理学療法士・作業療法士がご自宅を訪問します。<br>身体機能の回復・維持から日常生活動作の改善まで、個別プログラムで支援します。</p>
+    <div class="sen sen-s">Visiting Rehabilitation</div>
+    <h1 class="sttl">訪問でのリハビリ</h1>
+    <p class="sdesc">訪問看護ステーションの理学療法士・作業療法士がご自宅を訪問します（外来・デイケアではありません）。<br>身体機能の回復・維持から日常生活動作の改善まで、個別プログラムで支援します。</p>
+  </div>
+</section>
+
+<!-- 訪問看護ステーションとしての強み -->
+<section style="background: var(--sky-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Why Bloom</div>
+      <h2 class="sttl">訪問看護ステーションブルームの体制</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-num">01</div><div class="feat-ttl">迅速な緊急対応</div><p class="feat-txt">エリアを絞り、緊急時も素早く訪問できる体制。休日・夜間も安心して任せられます。</p></div>
+      <div class="feat-card"><div class="feat-num">02</div><div class="feat-ttl">退院後の安心サポート</div><p class="feat-txt">退院時カンファレンスへ積極参加。病院と同様のケアが自宅でも受けられるよう徹底引き継ぎ。</p></div>
+      <div class="feat-card"><div class="feat-num">03</div><div class="feat-ttl">幅広い疾患・状態に対応</div><p class="feat-txt">がん・難病・精神疾患・医療的ケアまで。多様なニーズに対応できる専門チームが揃っています。</p></div>
+      <div class="feat-card"><div class="feat-num">04</div><div class="feat-ttl">医療DX推進</div><p class="feat-txt">ICT活用による情報共有で、スタッフ間・医療機関との連携を強化。質の高いケアを実現します。</p></div>
+    </div>
   </div>
 </section>
 
@@ -170,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="shd">
       <div class="sen sen-p">FAQ</div>
       <h2 class="sttl">よくあるご質問</h2>
-      <p class="sdesc">リハビリサービスについてよく寄せられるご質問をまとめました。</p>
+      <p class="sdesc">訪問でのリハビリについてよく寄せられるご質問をまとめました。</p>
     </div>
     <div class="faq-wrap">
       <!-- ✏️ FAQの追加・編集はここで行ってください -->
@@ -209,10 +225,6 @@ import Layout from '../layouts/Layout.astro';
       <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
       <div class="cta-ph-hr">平日 8:30〜17:30</div>
     </div>
-  </div>
-  <div class="cta-btns">
-    <a class="cta-w" href="/#contact">📩 お問い合わせフォーム</a>
-    <a class="cta-o" href="#">💬 LINE で相談する</a>
   </div>
 </div>
 

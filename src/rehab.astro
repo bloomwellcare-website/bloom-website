@@ -1,0 +1,231 @@
+---
+// 訪問看護（リハビリ）ページ
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="訪問でのリハビリ | 訪問看護ステーションブルーム">
+
+<!-- ヒーロー -->
+<section style="background: linear-gradient(135deg, var(--sky-soft) 0%, var(--pink-soft) 100%); padding: 5rem 1.5rem 4rem;">
+  <div class="si" style="text-align: center;">
+    <div class="sen sen-s">Visiting Rehabilitation</div>
+    <h1 class="sttl">訪問でのリハビリ</h1>
+    <p class="sdesc">訪問看護ステーションの理学療法士・作業療法士がご自宅を訪問します（外来・デイケアではありません）。<br>身体機能の回復・維持から日常生活動作の改善まで、個別プログラムで支援します。</p>
+  </div>
+</section>
+
+<!-- 訪問看護ステーションとしての強み -->
+<section style="background: var(--sky-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Why Bloom</div>
+      <h2 class="sttl">訪問看護ステーションブルームの体制</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-num">01</div><div class="feat-ttl">迅速な緊急対応</div><p class="feat-txt">エリアを絞り、緊急時も素早く訪問できる体制。休日・夜間も安心して任せられます。</p></div>
+      <div class="feat-card"><div class="feat-num">02</div><div class="feat-ttl">退院後の安心サポート</div><p class="feat-txt">退院時カンファレンスへ積極参加。病院と同様のケアが自宅でも受けられるよう徹底引き継ぎ。</p></div>
+      <div class="feat-card"><div class="feat-num">03</div><div class="feat-ttl">幅広い疾患・状態に対応</div><p class="feat-txt">がん・難病・精神疾患・医療的ケアまで。多様なニーズに対応できる専門チームが揃っています。</p></div>
+      <div class="feat-card"><div class="feat-num">04</div><div class="feat-ttl">医療DX推進</div><p class="feat-txt">ICT活用による情報共有で、スタッフ間・医療機関との連携を強化。質の高いケアを実現します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ブルームの強み -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Strength</div>
+      <h2 class="sttl">ブルームのリハビリが選ばれる理由</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem;">
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+          <div style="flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--sky-pale); display: flex; align-items: center; justify-content: center; font-size: 26px;">🤝</div>
+          <div style="flex: 1; min-width: 240px;">
+            <p style="font-size: 13.5px; color: var(--sky); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.3rem;">STRENGTH 01</p>
+            <h3 style="font-family: 'Shippori Mincho', serif; font-size: 21px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.6rem;">リハビリスタッフ5名体制</h3>
+            <p style="font-size: 15.5px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 0.75rem;">理学療法士（PT）3名・作業療法士（OT）2名が在籍。複数のスタッフが一人のご利用者様に関わり、定例ミーティングで情報を共有しているので、偏りのない幅広いアプローチを提供できます。担当スタッフが急なお休みになっても、他のスタッフがスムーズに引き継ぎ対応します。</p>
+            <div style="display: flex; gap: 0.75rem;">
+              <span class="tag ts">理学療法士（PT）3名</span>
+              <span class="tag ts">作業療法士（OT）2名</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem;">
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+          <div style="flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--sky-pale); display: flex; align-items: center; justify-content: center; font-size: 26px;">🦽</div>
+          <div style="flex: 1; min-width: 240px;">
+            <p style="font-size: 13.5px; color: var(--sky); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.3rem;">STRENGTH 02</p>
+            <h3 style="font-family: 'Shippori Mincho', serif; font-size: 21px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.6rem;">当事業所所有の福祉用具でデモ対応</h3>
+            <p style="font-size: 15.5px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 0.75rem;">「デモしてもらったのに結局導入しなかった…」というお悩みを減らすため、福祉用具業者さんへ依頼する前に、当事業所所有の歩行補助具・入浴関連の福祉用具でリハビリの中で事前にお試しいただけます。「これ、使ってみたい」という気持ちが固まってから業者さんにお伝えできるので、無駄のないご案内が可能です。</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1rem;">
+              <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-sky); aspect-ratio: 1;">
+                <img src="/images/walking-aid-1.png" alt="歩行補助具1" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(0.90);" />
+                <span style="position: absolute; left: 8px; bottom: 8px; background: rgba(20,15,20,0.62); color: white; font-size: 11px; padding: 3px 10px; border-radius: 99px; letter-spacing: 0.03em;">歩行補助具</span>
+              </div>
+              <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-sky); aspect-ratio: 1;">
+                <img src="/images/walking-aid-2.png" alt="歩行補助具2" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <span style="position: absolute; left: 8px; bottom: 8px; background: rgba(20,15,20,0.62); color: white; font-size: 11px; padding: 3px 10px; border-radius: 99px; letter-spacing: 0.03em;">歩行補助具</span>
+              </div>
+              <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-sky); aspect-ratio: 1;">
+                <img src="/images/bath-aid-1.png" alt="入浴関連の福祉用具1" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(0.95);" />
+                <span style="position: absolute; left: 8px; bottom: 8px; background: rgba(20,15,20,0.62); color: white; font-size: 11px; padding: 3px 10px; border-radius: 99px; letter-spacing: 0.03em;">入浴関連</span>
+              </div>
+              <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-sky); aspect-ratio: 1;">
+                <img src="/images/bath-aid-2.png" alt="入浴関連の福祉用具2" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <span style="position: absolute; left: 8px; bottom: 8px; background: rgba(20,15,20,0.62); color: white; font-size: 11px; padding: 3px 10px; border-radius: 99px; letter-spacing: 0.03em;">入浴関連</span>
+              </div>
+              <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-sky); aspect-ratio: 1;">
+                <img src="/images/bath-aid-3.png" alt="入浴関連の福祉用具3" style="width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(0.97);" />
+                <span style="position: absolute; left: 8px; bottom: 8px; background: rgba(20,15,20,0.62); color: white; font-size: 11px; padding: 3px 10px; border-radius: 99px; letter-spacing: 0.03em;">入浴関連</span>
+              </div>
+            </div>
+
+            <p style="font-size: 13.5px; color: var(--txt-muted);">※ すべての用具に対応しているわけではありません（ベッド等は対象外）。</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem;">
+        <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+          <div style="flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--sky-pale); display: flex; align-items: center; justify-content: center; font-size: 26px;">🎓</div>
+          <div style="flex: 1; min-width: 240px;">
+            <p style="font-size: 13.5px; color: var(--sky); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.3rem;">STRENGTH 03</p>
+            <h3 style="font-family: 'Shippori Mincho', serif; font-size: 21px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.6rem;">神経筋疾患への専門的アプローチ</h3>
+            <p style="font-size: 15.5px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 1rem;">神経筋障害認定理学療法士（岡田俊輔）が監修し、専門的な知見をチーム全体で共有。パーキンソン病・ALS（筋萎縮性側索硬化症）・脊髄小脳変性症など、進行性疾患の特性に応じた質の高いリハビリを提供できる体制を整えています。</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem;">
+              <div style="background: var(--sky-soft); border-radius: 10px; padding: 0.6rem 0.8rem;"><p style="font-size: 14px; font-weight: 700; color: var(--txt-dark); margin: 0;">機能訓練</p><p style="font-size: 13px; color: var(--txt-muted); margin: 0.2rem 0 0;">疾患特性に応じた機能向上・維持・低下予防</p></div>
+              <div style="background: var(--sky-soft); border-radius: 10px; padding: 0.6rem 0.8rem;"><p style="font-size: 14px; font-weight: 700; color: var(--txt-dark); margin: 0;">ADL訓練・指導</p><p style="font-size: 13px; color: var(--txt-muted); margin: 0.2rem 0 0;">動作の工夫や代償手段の提案・指導</p></div>
+              <div style="background: var(--sky-soft); border-radius: 10px; padding: 0.6rem 0.8rem;"><p style="font-size: 14px; font-weight: 700; color: var(--txt-dark); margin: 0;">環境・用具のご提案</p><p style="font-size: 13px; color: var(--txt-muted); margin: 0.2rem 0 0;">進行を見据えた環境整備と用具選定</p></div>
+              <div style="background: var(--sky-soft); border-radius: 10px; padding: 0.6rem 0.8rem;"><p style="font-size: 14px; font-weight: 700; color: var(--txt-dark); margin: 0;">意思伝達手段の検討</p><p style="font-size: 13px; color: var(--txt-muted); margin: 0.2rem 0 0;">発話・筆記が困難な場合の早期支援</p></div>
+              <div style="background: var(--sky-soft); border-radius: 10px; padding: 0.6rem 0.8rem;"><p style="font-size: 14px; font-weight: 700; color: var(--txt-dark); margin: 0;">呼吸管理のサポート</p><p style="font-size: 13px; color: var(--txt-muted); margin: 0.2rem 0 0;">呼吸理学療法・喀痰吸引・カフアシスト</p></div>
+              <div style="background: var(--sky-soft); border-radius: 10px; padding: 0.6rem 0.8rem;"><p style="font-size: 14px; font-weight: 700; color: var(--txt-dark); margin: 0;">ご家族への介助指導</p><p style="font-size: 13px; color: var(--txt-muted); margin: 0.2rem 0 0;">負担を軽減し安全に介助できる方法を継続的に</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 専門職紹介 -->
+<section style="background: var(--sky-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Specialist</div>
+      <h2 class="sttl">専門スタッフ</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem; text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 1rem;">🦽</div>
+        <h3 style="font-family: 'Shippori Mincho', serif; font-size: 20px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">理学療法士（PT）</h3>
+        <p style="font-size: 13.5px; color: var(--sky); font-weight: 600; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Physical Therapist</p>
+        <p style="font-size: 15.5px; color: var(--txt-muted); line-height: 1.85;">関節の動き・筋力・バランスなど身体機能の回復・維持を専門とします。歩行訓練や転倒予防も対応します。</p>
+      </div>
+
+      <div style="background: white; border-radius: 16px; border: 1px solid var(--border-sky); padding: 2rem; text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 1rem;">✋</div>
+        <h3 style="font-family: 'Shippori Mincho', serif; font-size: 20px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">作業療法士（OT）</h3>
+        <p style="font-size: 13.5px; color: var(--sky); font-weight: 600; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Occupational Therapist</p>
+        <p style="font-size: 15.5px; color: var(--txt-muted); line-height: 1.85;">食事・着替え・入浴などの日常生活動作（ADL）の改善を専門とします。住環境の整備もサポートします。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- サービス内容 -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">Service</div>
+      <h2 class="sttl">リハビリの内容</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+      {[
+        { icon: '🚶', title: '歩行・移動訓練', text: '安全に歩けるよう筋力・バランスを鍛えます。杖や歩行器の使い方もご指導します。' },
+        { icon: '🛡️', title: '転倒予防', text: '転倒リスクを評価し、自宅環境の改善提案と予防訓練を行います。' },
+        { icon: '🍽️', title: '日常生活動作訓練', text: '食事・着替え・入浴・トイレなど、自立した生活ができるよう支援します。' },
+        { icon: '💪', title: '筋力・関節訓練', text: '廃用による筋力低下を防ぎ、関節の柔軟性を維持・改善します。' },
+        { icon: '🏠', title: '住環境整備の提案', text: '手すりの位置・段差解消など、安全に暮らせる住環境のアドバイスをします。' },
+        { icon: '🧘', title: '呼吸リハビリ', text: '慢性呼吸器疾患の方への呼吸訓練・体力維持プログラムを提供します。' },
+      ].map(s => (
+        <div style="background: white; border-radius: 14px; border: 1px solid var(--border-sky); padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 0.6rem;">{s.icon}</div>
+          <h3 style="font-size: 16.5px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.4rem;">{s.title}</h3>
+          <p style="font-size: 14.5px; color: var(--txt-muted); line-height: 1.85;">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- こんな方に -->
+<section style="background: var(--sky-soft);">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-s">対象</div>
+      <h2 class="sttl">こんな方におすすめです</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      {['脳卒中後の麻痺', '骨折・術後のリハビリ', 'パーキンソン病', '関節リウマチ', '変形性関節症', '廃用症候群', '呼吸器疾患', '神経難病', '転倒が心配な方', '退院後の機能回復', '介護予防'].map(d => (
+        <span class="tag ts">{d}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">FAQ</div>
+      <h2 class="sttl">よくあるご質問</h2>
+      <p class="sdesc">訪問でのリハビリについてよく寄せられるご質問をまとめました。</p>
+    </div>
+    <div class="faq-wrap">
+      <!-- ✏️ FAQの追加・編集はここで行ってください -->
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">訪問看護の指示書がないとリハビリは受けられませんか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>主治医からの訪問看護指示書が必要です。指示書の発行についてはご相談いただければ、必要な流れをご案内します。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">福祉用具のデモは無料ですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>リハビリの中での事前デモに追加費用はかかりません。歩行補助具・入浴関連の福祉用具の一部に対応しています（ベッド等は対象外です）。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">神経筋疾患の専門的なリハビリは誰が担当しますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>神経筋障害認定理学療法士が監修し、専門的な知見をチーム全体で共有しています。担当スタッフが変わっても、疾患特性に応じた質の高いリハビリを継続してご提供できます。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">どのくらいの頻度で伺えますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>ご状態やご希望に応じて訪問頻度を調整します。まずはご相談の上、無理のないプログラムをご提案します。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">対応エリアはどこですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>豊田市を中心に、一部安城市・岡崎市・知立市エリアにも迅速に訪問可能です。詳細はお問い合わせください。</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-d1"></div><div class="cta-d2"></div>
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>相談だけでも構いません。どんな小さなことでもお気軽にどうぞ。</p>
+  <div class="cta-phones">
+    <div class="cta-ph">
+      <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
+      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
+      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+    </div>
+  </div>
+</div>
+
+</Layout>

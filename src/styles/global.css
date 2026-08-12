@@ -157,13 +157,13 @@ nav { display: flex; align-items: center; }
 }
 .hero::before {
   content: '';
-  position: fixed; inset: 0; z-index: -2;
-  background-image: url('/images/ホームページ背景.jpg');
+  position: absolute; inset: 0; z-index: -2;
+  background-image: url('/images/hero-bg.jpg');
   background-size: cover; background-position: center;
   filter: saturate(1.35) contrast(1.08);
 }
 .hero-overlay {
-  position: fixed; inset: 0; z-index: -1;
+  position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(120deg, rgba(255,240,246,0.55) 0%, rgba(224,242,255,0.45) 100%);
 }
 .hero-d1 { position: absolute; right:-80px; top:-80px; width:520px; height:520px; border-radius:50%; background: radial-gradient(circle, rgba(232,143,160,0.15), transparent 70%); z-index: 1; }

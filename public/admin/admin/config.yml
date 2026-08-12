@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: bloomwellcare-website/bloom-website
+  branch: main
+  base_url: https://bloom-cms-auth.vns-bloom.workers.dev
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "notices"
+    label: "お知らせ"
+    folder: "src/data/notices"
+    create: true
+    slug: "{{fields.date}}-{{slug}}"
+    fields:
+      - { label: "日付", name: "date", widget: "date", format: "YYYY.MM.DD" }
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "リンク先(任意)", name: "url", widget: "string", required: false }
+
+  - name: "settings"
+    label: "基本設定"
+    files:
+      - name: "contact"
+        label: "連絡先情報"
+        file: "src/data/settings.json"
+        fields:
+          - { label: "訪問看護ステーション電話番号", name: "nursing_phone", widget: "string" }
+          - { label: "居宅介護支援事業所電話番号", name: "care_phone", widget: "string" }
+          - { label: "営業時間", name: "business_hours", widget: "string" }

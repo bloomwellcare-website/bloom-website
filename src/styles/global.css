@@ -40,7 +40,7 @@ body {
   background: var(--cream);
   color: var(--txt-dark);
   line-height: 1.75;
-  font-size: 19px;
+  font-size: 22px;
 }
 
 /* ━━━ HEADER ━━━ */
@@ -251,7 +251,7 @@ section { padding: 5.5rem 1.5rem; }
 .sen-p { color: var(--pink); }
 .sen-s { color: var(--sky); }
 .sttl { font-family: 'Shippori Mincho', serif; font-size: clamp(28px,4.8vw,48px); font-weight: 700; color: var(--txt-dark); line-height: 1.3; letter-spacing: 0.01em; margin-bottom: 0.8rem; }
-.sdesc { font-size: 18px; color: var(--txt-muted); line-height: 1.95; max-width: 500px; margin: 0 auto; }
+.sdesc { font-size: 21px; color: var(--txt-muted); line-height: 1.95; max-width: 500px; margin: 0 auto; }
 
 /* ━━━ サービスカード ━━━ */
 .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; }
@@ -280,7 +280,7 @@ section { padding: 5.5rem 1.5rem; }
 .sb-s { background: var(--sky-pale); color: var(--sky); }
 .sb-g { background: #d8f0e8; color: #2a8a60; }
 .svc-name { font-family: 'Shippori Mincho', serif; font-size: 19px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.6rem; }
-.svc-desc { font-size: 17.5px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 1rem; }
+.svc-desc { font-size: 20px; color: var(--txt-muted); line-height: 1.9; margin-bottom: 1rem; }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.25rem; }
 .tag { font-size: 11px; padding: 3px 10px; border-radius: 99px; border: 1px solid; font-weight: 500; }
 .tp { background: var(--pink-soft); color: var(--pink); border-color: var(--pink-pale); }
@@ -298,7 +298,7 @@ section { padding: 5.5rem 1.5rem; }
 .feat-card { background: white; border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; border: 1px solid var(--border); }
 .feat-num { font-family: 'Shippori Mincho', serif; font-size: 44px; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--pink-pale), var(--sky-pale)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .feat-ttl { font-size: 14px; font-weight: 700; color: var(--txt-dark); margin-bottom: 0.65rem; }
-.feat-txt { font-size: 16.5px; color: var(--txt-muted); line-height: 1.85; }
+.feat-txt { font-size: 19px; color: var(--txt-muted); line-height: 1.85; }
 
 /* ━━━ あいさつ ━━━ */
 .greet-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
@@ -314,7 +314,7 @@ section { padding: 5.5rem 1.5rem; }
 .greet-badge { position: absolute; bottom: 1.25rem; left: 1.25rem; background: white; border-radius: 10px; padding: 0.6rem 1rem; font-size: 12px; font-weight: 500; color: var(--txt-mid); box-shadow: 0 4px 14px rgba(232,143,160,0.15); border: 1px solid var(--border); }
 .greet-en { font-size: 11px; letter-spacing: 0.2em; color: var(--pink); font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; }
 .greet-ttl { font-family: 'Shippori Mincho', serif; font-size: clamp(19px,2.5vw,27px); font-weight: 700; color: var(--txt-dark); line-height: 1.55; margin-bottom: 1.5rem; }
-.greet-txt { font-size: 18px; color: var(--txt-muted); line-height: 2.1; margin-bottom: 1rem; }
+.greet-txt { font-size: 21px; color: var(--txt-muted); line-height: 2.1; margin-bottom: 1rem; }
 
 /* ━━━ ブログ ━━━ */
 .blog-bg { background: var(--sky-soft); }
@@ -335,17 +335,17 @@ section { padding: 5.5rem 1.5rem; }
 .bc-r { background: var(--sky-pale); color: var(--sky); }
 .bc-c { background: #d8f0e8; color: #2a8a60; }
 .bdate { font-size: 11px; color: var(--txt-muted); }
-.bttl { font-size: 18px; font-weight: 500; color: var(--txt-dark); line-height: 1.6; }
+.bttl { font-size: 20px; font-weight: 500; color: var(--txt-dark); line-height: 1.6; }
 .bauthor { font-size: 11px; color: var(--txt-muted); margin-top: 6px; }
 .blog-coming { background: white; border-radius: 16px; border: 2px dashed var(--sky-pale); padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
 .bc-icon { font-size: 36px; }
 .bc-ttl { font-size: 18px; font-weight: 600; color: var(--sky); }
-.bc-txt { font-size: 16.5px; color: var(--txt-muted); line-height: 1.8; }
+.bc-txt { font-size: 19px; color: var(--txt-muted); line-height: 1.8; }
 
 /* ━━━ FAQ ━━━ */
 .faq-wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.65rem; }
 .faq-item { background: white; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
-.faq-qbtn { width: 100%; text-align: left; display: flex; align-items: flex-start; gap: 12px; padding: 1.1rem 1.25rem; background: none; border: none; cursor: pointer; font-size: 18px; font-weight: 500; color: var(--txt-dark); transition: background 0.15s; font-family: inherit; }
+.faq-qbtn { width: 100%; text-align: left; display: flex; align-items: flex-start; gap: 12px; padding: 1.1rem 1.25rem; background: none; border: none; cursor: pointer; font-size: 21px; font-weight: 500; color: var(--txt-dark); transition: background 0.15s; font-family: inherit; }
 .faq-qbtn:hover { background: var(--pink-soft); }
 .faq-qm { flex-shrink: 0; width: 26px; height: 26px; background: linear-gradient(135deg, var(--pink), var(--pink-mid)); color: white; border-radius: 8px; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
 .faq-qt { flex: 1; }
@@ -427,7 +427,7 @@ footer { background: #1e1628; color: rgba(255,255,255,0.65); padding: 3.5rem 1.5
   .ftr-top { grid-template-columns: 1fr; gap: 2rem; }
   .hero { min-height: 620px; }
   .hero::before, .hero-overlay { position: absolute; }
-  .hero::before { background-attachment: scroll; }
+  .hero::before { background-attachment: scroll; background-image: url('/images/hero-bg-mobile.jpg'); }
   .hero-content { margin: 0 1rem 0.75rem auto; max-width: 100%; padding: 1.25rem 1.25rem; }
   .hero-eyebrow { font-size: 22px; }
 }

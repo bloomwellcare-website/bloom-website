@@ -12,11 +12,12 @@ collections:
     label: "お知らせ"
     folder: "src/data/notices"
     create: true
+    format: "json"
     slug: "{{fields.date}}-{{slug}}"
     fields:
-      - { label: "日付", name: "date", widget: "date", format: "YYYY.MM.DD" }
+      - { label: "日付", name: "date", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY.MM.DD" }
       - { label: "タイトル", name: "title", widget: "string" }
-      - { label: "リンク先(任意)", name: "url", widget: "string", required: false }
+      - { label: "本文", name: "body", widget: "text" }
 
   - name: "settings"
     label: "基本設定"

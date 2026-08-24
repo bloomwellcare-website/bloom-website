@@ -1,6 +1,7 @@
 ---
 // 居宅介護支援ページ
 import Layout from '../layouts/Layout.astro';
+import settings from '../data/settings.json';
 ---
 <Layout title="居宅介護支援 | 居宅介護支援事業所ブルーム">
 
@@ -94,12 +95,41 @@ import Layout from '../layouts/Layout.astro';
       <p class="sdesc">以下のエリアを中心に対応しています。詳細はお問い合わせください。</p>
     </div>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      {['豊田市', '安城市', '岡崎市', '知立市'].map(area => (
+      {['豊田市'].map(area => (
         <div style="background: white; border-radius: 12px; border: 2px solid #c8e8d8; padding: 1.25rem 2.5rem; text-align: center;">
           <div style="font-size: 24px; margin-bottom: 0.4rem;">📍</div>
           <div style="font-family: 'Kaisei Decol', serif; font-size: 18px; font-weight: 700; color: #2a8a60;">{area}</div>
         </div>
       ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="si">
+    <div class="shd">
+      <div class="sen" style="color: #2a8a60;">FAQ</div>
+      <h2 class="sttl">よくあるご質問</h2>
+      <p class="sdesc">居宅介護支援についてよく寄せられるご質問をまとめました。</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">居宅介護支援事業所とは何ですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>ケアマネジャーが在籍し、要介護認定の申請代行・ケアプランの作成・介護サービス事業者との調整・施設入所の相談などを行う事業所です。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">ケアプランの作成に費用はかかりますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>居宅介護支援は全額が介護保険から給付されるため、ケアプラン作成にご利用者様の自己負担はかかりません。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">まだ要介護認定を受けていませんが相談できますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>もちろんです。認定申請の代行から承っておりますので、どこから始めればいいか分からない場合もお気軽にご相談ください。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">サービス提供エリアはどこですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>豊田市を中心に対応しています。詳細はお問い合わせください。</span></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -112,8 +142,8 @@ import Layout from '../layouts/Layout.astro';
   <div class="cta-phones">
     <div class="cta-ph">
       <div class="cta-ph-lbl">居宅介護支援事業所ブルーム</div>
-      <a class="cta-ph-num" href="tel:0565416750">0565-41-6750</a>
-      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+      <a class="cta-ph-num" href={`tel:${settings.care_phone.replace(/-/g, '')}`}>{settings.care_phone}</a>
+      <div class="cta-ph-hr">{settings.business_hours}</div>
     </div>
   </div>
 </div>

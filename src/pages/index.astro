@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getBlogPosts } from '../lib/notion.js';
+import settings from '../data/settings.json';
 
 const posts = await getBlogPosts();
 const now = Date.now();
@@ -197,24 +198,12 @@ const recentPosts = posts.slice(0, 3).map(p => ({
     <div class="faq-wrap">
       <!-- ✏️ FAQの追加・編集はここで行ってください -->
       <div class="faq-item">
-        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">訪問看護ではどんなことをしてもらえますか？</span><span class="faq-plus">+</span></button>
-        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>薬・点滴・人工呼吸器・胃瘻・尿道留置カテーテル・腹膜透析などの管理、褥瘡の処置、排便コントロール、在宅看取りの支援、入浴介助、理学療法士・作業療法士によるリハビリなど、多岐にわたります。</span></div></div>
-      </div>
-      <div class="faq-item">
         <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">迷っているのですが、話だけでも聞いてもらえますか？</span><span class="faq-plus">+</span></button>
-        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>もちろんです。事前にご説明だけでも伺うことが可能です。相談には費用もかかりませんので、お気軽にお電話やお問い合わせフォームからご連絡ください。</span></div></div>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>もちろんです。事前にご説明だけでも伺うことが可能です。相談には費用もかかりませんので、お気軽にお電話ください。</span></div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">サービス提供エリアはどこですか？</span><span class="faq-plus">+</span></button>
-        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>豊田市を中心に、一部安城市・岡崎市・知立市エリアにも迅速に訪問可能です。詳細はお問い合わせください。</span></div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">精神科の訪問看護も対応していますか？</span><span class="faq-plus">+</span></button>
-        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>対応しています。精神疾患をお持ちの方への訪問看護も行っております。不安なことがあればお気軽にご相談ください。</span></div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">居宅介護支援事業所とは何ですか？</span><span class="faq-plus">+</span></button>
-        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>ケアマネジャーが在籍し、要介護認定の申請代行・ケアプランの作成・介護サービス事業者との調整・施設入所の相談などを行う事業所です。</span></div></div>
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">訪問看護と居宅介護支援、両方をお願いすることはできますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>可能です。同じ合同会社SHIARAが両方の事業所を運営しているため、看護・リハビリ・ケアプランを分断せず連携してサポートできます。</span></div></div>
       </div>
     </div>
   </div>
@@ -232,15 +221,15 @@ const recentPosts = posts.slice(0, 3).map(p => ({
     <div class="office-grid">
       <div class="office-card">
         <div class="office-name">訪問看護ステーションブルーム</div>
-        <a class="office-num" href="tel:0565416767">0565-41-6767</a>
-        <div class="office-hr">平日 8:30〜17:30（土日・祝定休）</div>
+        <a class="office-num" href={`tel:${settings.nursing_phone.replace(/-/g, '')}`}>{settings.nursing_phone}</a>
+        <div class="office-hr">{settings.business_hours}</div>
         <div class="office-row"><span class="office-row-lbl">所在地</span><span>〒473-0902 愛知県豊田市大林町10丁目20-5 <span style="white-space:nowrap;">K・スクエア102号</span></span></div>
         <div class="office-row"><span class="office-row-lbl">事業所番号</span><span>2363090206</span></div>
       </div>
       <div class="office-card">
         <div class="office-name">居宅介護支援事業所ブルーム</div>
-        <a class="office-num" href="tel:0565416750">0565-41-6750</a>
-        <div class="office-hr">平日 8:30〜17:30（土日・祝定休）</div>
+        <a class="office-num" href={`tel:${settings.care_phone.replace(/-/g, '')}`}>{settings.care_phone}</a>
+        <div class="office-hr">{settings.business_hours}</div>
         <div class="office-row"><span class="office-row-lbl">所在地</span><span>〒470-1206 愛知県豊田市永覚新町3丁目17番地 <span style="white-space:nowrap;">MIガーデン102号</span></span></div>
         <div class="office-row"><span class="office-row-lbl">事業所番号</span><span>2373003884</span></div>
       </div>

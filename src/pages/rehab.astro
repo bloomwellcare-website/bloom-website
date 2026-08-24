@@ -1,6 +1,7 @@
 ---
 // 訪問看護（リハビリ）ページ
 import Layout from '../layouts/Layout.astro';
+import settings from '../data/settings.json';
 ---
 <Layout title="訪問でのリハビリ | 訪問看護ステーションブルーム">
 
@@ -206,10 +207,6 @@ import Layout from '../layouts/Layout.astro';
         <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">どのくらいの頻度で伺えますか？</span><span class="faq-plus">+</span></button>
         <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>ご状態やご希望に応じて訪問頻度を調整します。まずはご相談の上、無理のないプログラムをご提案します。</span></div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">対応エリアはどこですか？</span><span class="faq-plus">+</span></button>
-        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>豊田市・安城市・知立市を中心に、迅速に訪問可能なエリアに限定しています。詳細はお問い合わせください。</span></div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -222,8 +219,8 @@ import Layout from '../layouts/Layout.astro';
   <div class="cta-phones">
     <div class="cta-ph">
       <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
-      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
-      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+      <a class="cta-ph-num" href={`tel:${settings.nursing_phone.replace(/-/g, '')}`}>{settings.nursing_phone}</a>
+      <div class="cta-ph-hr">{settings.business_hours}</div>
     </div>
   </div>
 </div>

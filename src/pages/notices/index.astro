@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const files = import.meta.glob('../../data/notices/*.json', { eager: true });
+const notices = Object.entries(files)
+  .map(([path, mod]) => ({
+    slug: path.split('/').pop().replace('.json', ''),
+    ...mod.default,
+  }))
+  .sort((a, b) => (a.date < b.date ? 1 : -1));
+---
+<Layout title="お知らせ一覧 | 訪問看護ステーション・居宅介護支援事業所ブルーム">
+
+<section style="background: linear-gradient(135deg, var(--sky-soft) 0%, var(--pink-soft) 100%); padding: 4rem 1.5rem 3rem;">
+  <div class="si" style="text-align: center;">
+    <div class="sen sen-s">Notice</div>
+    <h1 class="sttl">お知らせ一覧</h1>
+  </div>
+</section>
+
+<section>
+  <div class="si" style="max-width: 760px;">
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      {notices.map(n => (
+        <a href={`/notices/${n.slug}`} style="display: flex; gap: 1.5rem; padding: 1.5rem 0.5rem; border-bottom: 1px solid var(--border); text-decoration: none; align-items: baseline;">
+          <span style="font-size: 14px; color: var(--txt-muted); flex-shrink: 0; width: 90px;">{n.date.replaceAll('-', '.')}</span>
+          <span style="font-size: 19px; color: var(--txt-dark);">{n.title}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+</Layout>

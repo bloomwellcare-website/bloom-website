@@ -2,6 +2,7 @@
 // 共通レイアウト
 // すべてのページで使うヘッダー・フッターはここで管理します
 import '../styles/global.css';
+import settings from '../data/settings.json';
 const { title = '訪問看護ステーション・居宅介護支援事業所ブルーム', description = '豊田市を中心に、一部安城市・岡崎市・知立市にも、訪問看護・リハビリ・居宅介護支援の3つのサービスで在宅生活を全力でサポートします。' } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -29,7 +30,7 @@ const { title = '訪問看護ステーション・居宅介護支援事業所ブ
         <div class="dropdown">
           <a class="dd-link" href="/nursing"><span class="dd-icon di-p">🩺</span>看護サービス</a>
           <a class="dd-link" href="/rehab"><span class="dd-icon di-s">🦽</span>訪問でのリハビリ</a>
-          <a class="dd-link" href="/#faq"><span class="dd-icon di-p">❓</span>よくある質問</a>
+          <a class="dd-link" href="/nursing#faq"><span class="dd-icon di-p">❓</span>よくある質問</a>
         </div>
       </div>
       <div class="nav-item">
@@ -48,11 +49,11 @@ const { title = '訪問看護ステーション・居宅介護支援事業所ブ
     <div class="hdr-ph">
       <div class="hdr-ph-row">
         <span>訪問看護ステーション</span>
-        <a href="tel:0565416767">0565-41-6767</a>
+        <a href={`tel:${settings.nursing_phone.replace(/-/g, '')}`}>{settings.nursing_phone}</a>
       </div>
       <div class="hdr-ph-row">
         <span>居宅介護支援事業所</span>
-        <a href="tel:0565416750">0565-41-6750</a>
+        <a href={`tel:${settings.care_phone.replace(/-/g, '')}`}>{settings.care_phone}</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="メニュー">

@@ -1,6 +1,7 @@
 ---
 // 訪問看護（看護）ページ
 import Layout from '../layouts/Layout.astro';
+import settings from '../data/settings.json';
 ---
 <Layout title="看護サービス | 訪問看護ステーションブルーム">
 
@@ -119,6 +120,34 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<section id="faq">
+  <div class="si">
+    <div class="shd">
+      <div class="sen sen-p">FAQ</div>
+      <h2 class="sttl">よくあるご質問</h2>
+      <p class="sdesc">看護サービスについてよく寄せられるご質問をまとめました。</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">訪問看護ではどんなことをしてもらえますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>薬・点滴・人工呼吸器・胃瘻・尿道留置カテーテル・腹膜透析などの管理、褥瘡の処置、排便コントロール、在宅看取りの支援、入浴介助など、多岐にわたります。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">精神科の訪問看護も対応していますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>対応しています。精神疾患をお持ちの方への訪問看護も行っております。不安なことがあればお気軽にご相談ください。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">在宅での看取りにも対応してもらえますか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>対応しています。ご本人・ご家族のご希望に寄り添いながら、主治医と連携して住み慣れた場所で最期まで過ごせるよう支援します。</span></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-qbtn" onclick="toggleFaq(this)"><span class="faq-qm">Q</span><span class="faq-qt">サービス提供エリアはどこですか？</span><span class="faq-plus">+</span></button>
+        <div class="faq-a"><div class="faq-ai"><span class="faq-am">A</span><span>豊田市を中心に、一部安城市・岡崎市・知立市エリアにも迅速に訪問可能です。詳細はお問い合わせください。</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <div class="cta-section">
   <div class="cta-d1"></div><div class="cta-d2"></div>
@@ -127,8 +156,8 @@ import Layout from '../layouts/Layout.astro';
   <div class="cta-phones">
     <div class="cta-ph">
       <div class="cta-ph-lbl">訪問看護ステーションブルーム</div>
-      <a class="cta-ph-num" href="tel:0565416767">0565-41-6767</a>
-      <div class="cta-ph-hr">平日 8:30〜17:30</div>
+      <a class="cta-ph-num" href={`tel:${settings.nursing_phone.replace(/-/g, '')}`}>{settings.nursing_phone}</a>
+      <div class="cta-ph-hr">{settings.business_hours}</div>
     </div>
   </div>
 </div>

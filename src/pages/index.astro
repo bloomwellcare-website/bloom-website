@@ -9,6 +9,15 @@ const recentPosts = posts.slice(0, 3).map(p => ({
   ...p,
   isNew: p.date ? (now - new Date(p.date).getTime()) / 86400000 <= 14 : false,
 }));
+
+const noticeFiles = import.meta.glob('../data/notices/*.json', { eager: true });
+const notices = Object.entries(noticeFiles)
+  .map(([path, mod]) => ({
+    slug: path.split('/').pop().replace('.json', ''),
+    ...mod.default,
+  }))
+  .sort((a, b) => (a.date < b.date ? 1 : -1))
+  .slice(0, 3);
 ---
 <Layout>
 
@@ -17,9 +26,10 @@ const recentPosts = posts.slice(0, 3).map(p => ({
   <div class="notice-inner">
     <span class="notice-badge">お知らせ</span>
     <div class="notice-list">
-      <!-- ✏️ お知らせはここを編集してください -->
-      <a class="notice-link" href="#"><span class="notice-date">2025.02.19</span>医療DX推進への取り組みについて</a>
-      <a class="notice-link" href="#"><span class="notice-date">2024.08.18</span>ホームページをリニューアルしました</a>
+      {notices.map(n => (
+        <a class="notice-link" href={`/notices/${n.slug}`}><span class="notice-date">{n.date.replaceAll('-', '.')}</span>{n.title}</a>
+      ))}
+      <a class="notice-link" href="/notices" style="color: var(--sky); font-weight: 600;">すべて見る →</a>
     </div>
   </div>
 </div>
